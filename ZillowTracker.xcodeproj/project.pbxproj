@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D79A377624803403005899BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A377524803403005899BF /* AppDelegate.swift */; };
+		D79A377824803403005899BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A377724803403005899BF /* SceneDelegate.swift */; };
+		D79A377A24803403005899BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A377924803403005899BF /* ViewController.swift */; };
+		D79A377D24803403005899BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D79A377B24803403005899BF /* Main.storyboard */; };
+		D79A377F24803407005899BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D79A377E24803407005899BF /* Assets.xcassets */; };
+		D79A378224803407005899BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D79A378024803407005899BF /* LaunchScreen.storyboard */; };
+		D79A378D24803407005899BF /* ZillowTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A378C24803407005899BF /* ZillowTrackerTests.swift */; };
+		D79A379B248051A5005899BF /* ZTHouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A379A248051A5005899BF /* ZTHouse.swift */; };
+		D79A379E2484725A005899BF /* ZTEvaluationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A379D2484725A005899BF /* ZTEvaluationContext.swift */; };
+		D79A37A0248476F8005899BF /* ZTEvaluatedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A379F248476F8005899BF /* ZTEvaluatedModel.swift */; };
+		D79A37A22484A839005899BF /* ZTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A37A12484A839005899BF /* ZTClient.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D79A378924803407005899BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D79A376A24803403005899BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D79A377124803403005899BF;
+			remoteInfo = ZillowTracker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D79A377224803403005899BF /* ZillowTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZillowTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D79A377524803403005899BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D79A377724803403005899BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D79A377924803403005899BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D79A377C24803403005899BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D79A377E24803407005899BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D79A378124803407005899BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D79A378324803407005899BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D79A378824803407005899BF /* ZillowTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZillowTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D79A378C24803407005899BF /* ZillowTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZillowTrackerTests.swift; sourceTree = "<group>"; };
+		D79A378E24803407005899BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D79A379A248051A5005899BF /* ZTHouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTHouse.swift; sourceTree = "<group>"; };
+		D79A379D2484725A005899BF /* ZTEvaluationContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTEvaluationContext.swift; sourceTree = "<group>"; };
+		D79A379F248476F8005899BF /* ZTEvaluatedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTEvaluatedModel.swift; sourceTree = "<group>"; };
+		D79A37A12484A839005899BF /* ZTClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTClient.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D79A376F24803403005899BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D79A378524803407005899BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D79A376924803403005899BF = {
+			isa = PBXGroup;
+			children = (
+				D79A377424803403005899BF /* ZillowTracker */,
+				D79A378B24803407005899BF /* ZillowTrackerTests */,
+				D79A377324803403005899BF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D79A377324803403005899BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D79A377224803403005899BF /* ZillowTracker.app */,
+				D79A378824803407005899BF /* ZillowTrackerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D79A377424803403005899BF /* ZillowTracker */ = {
+			isa = PBXGroup;
+			children = (
+				D79A379C24847233005899BF /* Contexts */,
+				D79A3799248050E6005899BF /* UI */,
+				D79A3798248050B7005899BF /* Clients */,
+				D79A3797248050AF005899BF /* Models */,
+				D79A377524803403005899BF /* AppDelegate.swift */,
+				D79A377724803403005899BF /* SceneDelegate.swift */,
+				D79A377B24803403005899BF /* Main.storyboard */,
+				D79A377E24803407005899BF /* Assets.xcassets */,
+				D79A378024803407005899BF /* LaunchScreen.storyboard */,
+				D79A378324803407005899BF /* Info.plist */,
+			);
+			path = ZillowTracker;
+			sourceTree = "<group>";
+		};
+		D79A378B24803407005899BF /* ZillowTrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				D79A378C24803407005899BF /* ZillowTrackerTests.swift */,
+				D79A378E24803407005899BF /* Info.plist */,
+			);
+			path = ZillowTrackerTests;
+			sourceTree = "<group>";
+		};
+		D79A3797248050AF005899BF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D79A379A248051A5005899BF /* ZTHouse.swift */,
+				D79A379F248476F8005899BF /* ZTEvaluatedModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D79A3798248050B7005899BF /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				D79A37A12484A839005899BF /* ZTClient.swift */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		D79A3799248050E6005899BF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D79A377924803403005899BF /* ViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D79A379C24847233005899BF /* Contexts */ = {
+			isa = PBXGroup;
+			children = (
+				D79A379D2484725A005899BF /* ZTEvaluationContext.swift */,
+			);
+			path = Contexts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D79A377124803403005899BF /* ZillowTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D79A379124803407005899BF /* Build configuration list for PBXNativeTarget "ZillowTracker" */;
+			buildPhases = (
+				D79A376E24803403005899BF /* Sources */,
+				D79A376F24803403005899BF /* Frameworks */,
+				D79A377024803403005899BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZillowTracker;
+			productName = ZillowTracker;
+			productReference = D79A377224803403005899BF /* ZillowTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D79A378724803407005899BF /* ZillowTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D79A379424803407005899BF /* Build configuration list for PBXNativeTarget "ZillowTrackerTests" */;
+			buildPhases = (
+				D79A378424803407005899BF /* Sources */,
+				D79A378524803407005899BF /* Frameworks */,
+				D79A378624803407005899BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D79A378A24803407005899BF /* PBXTargetDependency */,
+			);
+			name = ZillowTrackerTests;
+			productName = ZillowTrackerTests;
+			productReference = D79A378824803407005899BF /* ZillowTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D79A376A24803403005899BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Varvara Myronova";
+				TargetAttributes = {
+					D79A377124803403005899BF = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					D79A378724803407005899BF = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = D79A377124803403005899BF;
+					};
+				};
+			};
+			buildConfigurationList = D79A376D24803403005899BF /* Build configuration list for PBXProject "ZillowTracker" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D79A376924803403005899BF;
+			productRefGroup = D79A377324803403005899BF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D79A377124803403005899BF /* ZillowTracker */,
+				D79A378724803407005899BF /* ZillowTrackerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D79A377024803403005899BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D79A378224803407005899BF /* LaunchScreen.storyboard in Resources */,
+				D79A377F24803407005899BF /* Assets.xcassets in Resources */,
+				D79A377D24803403005899BF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D79A378624803407005899BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D79A376E24803403005899BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D79A379E2484725A005899BF /* ZTEvaluationContext.swift in Sources */,
+				D79A379B248051A5005899BF /* ZTHouse.swift in Sources */,
+				D79A377A24803403005899BF /* ViewController.swift in Sources */,
+				D79A37A0248476F8005899BF /* ZTEvaluatedModel.swift in Sources */,
+				D79A37A22484A839005899BF /* ZTClient.swift in Sources */,
+				D79A377624803403005899BF /* AppDelegate.swift in Sources */,
+				D79A377824803403005899BF /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D79A378424803407005899BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D79A378D24803407005899BF /* ZillowTrackerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D79A378A24803407005899BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D79A377124803403005899BF /* ZillowTracker */;
+			targetProxy = D79A378924803407005899BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D79A377B24803403005899BF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D79A377C24803403005899BF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D79A378024803407005899BF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D79A378124803407005899BF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D79A378F24803407005899BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D79A379024803407005899BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D79A379224803407005899BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z4W46D7MK3;
+				INFOPLIST_FILE = ZillowTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.varvaraMironova.ZillowTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D79A379324803407005899BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z4W46D7MK3;
+				INFOPLIST_FILE = ZillowTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.varvaraMironova.ZillowTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D79A379524803407005899BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z4W46D7MK3;
+				INFOPLIST_FILE = ZillowTrackerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.varvaraMironova.ZillowTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZillowTracker.app/ZillowTracker";
+			};
+			name = Debug;
+		};
+		D79A379624803407005899BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z4W46D7MK3;
+				INFOPLIST_FILE = ZillowTrackerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.varvaraMironova.ZillowTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZillowTracker.app/ZillowTracker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D79A376D24803403005899BF /* Build configuration list for PBXProject "ZillowTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D79A378F24803407005899BF /* Debug */,
+				D79A379024803407005899BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D79A379124803407005899BF /* Build configuration list for PBXNativeTarget "ZillowTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D79A379224803407005899BF /* Debug */,
+				D79A379324803407005899BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D79A379424803407005899BF /* Build configuration list for PBXNativeTarget "ZillowTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D79A379524803407005899BF /* Debug */,
+				D79A379624803407005899BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D79A376A24803403005899BF /* Project object */;
+}
