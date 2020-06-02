@@ -18,6 +18,9 @@
 		D79A379E2484725A005899BF /* ZTEvaluationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A379D2484725A005899BF /* ZTEvaluationContext.swift */; };
 		D79A37A0248476F8005899BF /* ZTEvaluatedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A379F248476F8005899BF /* ZTEvaluatedModel.swift */; };
 		D79A37A22484A839005899BF /* ZTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A37A12484A839005899BF /* ZTClient.swift */; };
+		D7A5DB122485C37900BE7BC8 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = D7A5DB112485C37900BE7BC8 /* Cartfile */; };
+		D7A5DB152485D89F00BE7BC8 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A5DB142485D89F00BE7BC8 /* Alamofire.framework */; };
+		D7A5DB162485D89F00BE7BC8 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7A5DB142485D89F00BE7BC8 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,20 @@
 			remoteInfo = ZillowTracker;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D7A5DB172485D89F00BE7BC8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D7A5DB162485D89F00BE7BC8 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D79A377224803403005899BF /* ZillowTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZillowTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +63,8 @@
 		D79A379D2484725A005899BF /* ZTEvaluationContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTEvaluationContext.swift; sourceTree = "<group>"; };
 		D79A379F248476F8005899BF /* ZTEvaluatedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTEvaluatedModel.swift; sourceTree = "<group>"; };
 		D79A37A12484A839005899BF /* ZTClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTClient.swift; sourceTree = "<group>"; };
+		D7A5DB112485C37900BE7BC8 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
+		D7A5DB142485D89F00BE7BC8 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7A5DB152485D89F00BE7BC8 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +92,7 @@
 				D79A377424803403005899BF /* ZillowTracker */,
 				D79A378B24803407005899BF /* ZillowTrackerTests */,
 				D79A377324803403005899BF /* Products */,
+				D7A5DB132485D89F00BE7BC8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +108,7 @@
 		D79A377424803403005899BF /* ZillowTracker */ = {
 			isa = PBXGroup;
 			children = (
+				D7A5DB112485C37900BE7BC8 /* Cartfile */,
 				D79A379C24847233005899BF /* Contexts */,
 				D79A3799248050E6005899BF /* UI */,
 				D79A3798248050B7005899BF /* Clients */,
@@ -143,6 +165,14 @@
 			path = Contexts;
 			sourceTree = "<group>";
 		};
+		D7A5DB132485D89F00BE7BC8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D7A5DB142485D89F00BE7BC8 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,6 +183,8 @@
 				D79A376E24803403005899BF /* Sources */,
 				D79A376F24803403005899BF /* Frameworks */,
 				D79A377024803403005899BF /* Resources */,
+				D7A5DB172485D89F00BE7BC8 /* Embed Frameworks */,
+				D7A5DB182485D8E900BE7BC8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -226,6 +258,7 @@
 			files = (
 				D79A378224803407005899BF /* LaunchScreen.storyboard in Resources */,
 				D79A377F24803407005899BF /* Assets.xcassets in Resources */,
+				D7A5DB122485C37900BE7BC8 /* Cartfile in Resources */,
 				D79A377D24803403005899BF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +271,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D7A5DB182485D8E900BE7BC8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D79A376E24803403005899BF /* Sources */ = {
@@ -412,6 +466,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z4W46D7MK3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ZillowTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -430,6 +488,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z4W46D7MK3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ZillowTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
