@@ -1,7 +1,7 @@
 //
 //  FileManager+AlamofireTests.swift
 //
-//  Copyright (c) 2014-2018 Alamofire Software Foundation (http://alamofire.org/)
+//  Copyright (c) 2014 Alamofire Software Foundation (http://alamofire.org/)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -25,14 +25,15 @@
 import Foundation
 
 extension FileManager {
+
     // MARK: - Common Directories
 
     static var temporaryDirectoryPath: String {
-        NSTemporaryDirectory()
+        return NSTemporaryDirectory()
     }
 
     static var temporaryDirectoryURL: URL {
-        URL(fileURLWithPath: FileManager.temporaryDirectoryPath, isDirectory: true)
+        return URL(fileURLWithPath: FileManager.temporaryDirectoryPath, isDirectory: true)
     }
 
     // MARK: - File System Modification
@@ -49,7 +50,7 @@ extension FileManager {
 
     @discardableResult
     static func createDirectory(at url: URL) -> Bool {
-        createDirectory(atPath: url.path)
+        return createDirectory(atPath: url.path)
     }
 
     @discardableResult
@@ -64,7 +65,7 @@ extension FileManager {
 
     @discardableResult
     static func removeItem(at url: URL) -> Bool {
-        removeItem(atPath: url.path)
+        return removeItem(atPath: url.path)
     }
 
     @discardableResult
@@ -82,6 +83,6 @@ extension FileManager {
 
     @discardableResult
     static func removeAllItemsInsideDirectory(at url: URL) -> Bool {
-        removeAllItemsInsideDirectory(atPath: url.path)
+        return removeAllItemsInsideDirectory(atPath: url.path)
     }
 }

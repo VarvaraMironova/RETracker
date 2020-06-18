@@ -9,8 +9,8 @@
 import Foundation
 
 struct ZTEvaluatedModel : Hashable {
-    var model : ZTHouse?
-    var grade : Float = 0.0
+    var model : ZTHouse
+    var grade : Double = 0.0
     
     static func == (lhs: ZTEvaluatedModel, rhs: ZTEvaluatedModel) -> Bool {
         return lhs.grade == rhs.grade && lhs.model == rhs.model
@@ -21,7 +21,7 @@ struct ZTEvaluatedModel : Hashable {
         hasher.combine(grade)
     }
     
-    init(model : ZTHouse, grade: Float) {
+    init(model : ZTHouse, grade: Double) {
         self.model = model
         self.grade = grade
     }

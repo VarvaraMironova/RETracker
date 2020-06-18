@@ -7,20 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D726379D24904D4600CF11DE /* ZTNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726379C24904D4600CF11DE /* ZTNotification.swift */; };
+		D72637A0249070BC00CF11DE /* ZTStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726379F249070BC00CF11DE /* ZTStringExtension.swift */; };
+		D75D77B1249AD86C00EBB090 /* ZTImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75D77B0249AD86C00EBB090 /* ZTImageViewExtension.swift */; };
+		D75D77B3249AE33500EBB090 /* ZTPropertyListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75D77B2249AE33500EBB090 /* ZTPropertyListHeaderView.swift */; };
+		D75D77B5249AE3E200EBB090 /* ZTPropertyListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75D77B4249AE3E200EBB090 /* ZTPropertyListHeaderView.xib */; };
+		D78137B82492EA58001FEDDE /* ZTSetupSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137B72492EA58001FEDDE /* ZTSetupSearchView.swift */; };
+		D78137BA24930768001FEDDE /* ZTZipDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137B924930768001FEDDE /* ZTZipDataSource.swift */; };
+		D78137BC24931717001FEDDE /* ZTStringSeparatorExtansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137BB24931717001FEDDE /* ZTStringSeparatorExtansion.swift */; };
+		D78137BF249419B1001FEDDE /* ZTConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137BE249419B1001FEDDE /* ZTConstants.swift */; };
+		D78137C124945792001FEDDE /* ZTPropertyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137C024945792001FEDDE /* ZTPropertyListView.swift */; };
+		D78137C3249457A8001FEDDE /* ZTPropertyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137C2249457A8001FEDDE /* ZTPropertyListViewController.swift */; };
+		D78137C5249457CA001FEDDE /* ZTPropertyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137C4249457CA001FEDDE /* ZTPropertyTableViewCell.swift */; };
+		D78137C92495C1D4001FEDDE /* ZTTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137C82495C1D4001FEDDE /* ZTTableViewDataSource.swift */; };
 		D79A377624803403005899BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A377524803403005899BF /* AppDelegate.swift */; };
 		D79A377824803403005899BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A377724803403005899BF /* SceneDelegate.swift */; };
-		D79A377A24803403005899BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A377924803403005899BF /* ViewController.swift */; };
+		D79A377A24803403005899BF /* ZTSetupSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A377924803403005899BF /* ZTSetupSearchViewController.swift */; };
 		D79A377D24803403005899BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D79A377B24803403005899BF /* Main.storyboard */; };
 		D79A377F24803407005899BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D79A377E24803407005899BF /* Assets.xcassets */; };
 		D79A378224803407005899BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D79A378024803407005899BF /* LaunchScreen.storyboard */; };
 		D79A378D24803407005899BF /* ZillowTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A378C24803407005899BF /* ZillowTrackerTests.swift */; };
 		D79A379B248051A5005899BF /* ZTHouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A379A248051A5005899BF /* ZTHouse.swift */; };
-		D79A379E2484725A005899BF /* ZTEvaluationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A379D2484725A005899BF /* ZTEvaluationContext.swift */; };
+		D79A379E2484725A005899BF /* ZTLocalNotificationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A379D2484725A005899BF /* ZTLocalNotificationContext.swift */; };
 		D79A37A0248476F8005899BF /* ZTEvaluatedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A379F248476F8005899BF /* ZTEvaluatedModel.swift */; };
 		D79A37A22484A839005899BF /* ZTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A37A12484A839005899BF /* ZTClient.swift */; };
 		D7A5DB122485C37900BE7BC8 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = D7A5DB112485C37900BE7BC8 /* Cartfile */; };
 		D7A5DB152485D89F00BE7BC8 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A5DB142485D89F00BE7BC8 /* Alamofire.framework */; };
 		D7A5DB162485D89F00BE7BC8 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7A5DB142485D89F00BE7BC8 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D7A5DB1A248704DF00BE7BC8 /* ZTAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5DB19248704DF00BE7BC8 /* ZTAddress.swift */; };
+		D7A5DB1C24870DC100BE7BC8 /* ZTArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5DB1B24870DC100BE7BC8 /* ZTArea.swift */; };
+		D7A5DB202488426F00BE7BC8 /* ZTProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5DB1F2488426F00BE7BC8 /* ZTProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,10 +64,23 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D79A377224803403005899BF /* ZillowTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZillowTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D726379C24904D4600CF11DE /* ZTNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTNotification.swift; sourceTree = "<group>"; };
+		D726379F249070BC00CF11DE /* ZTStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTStringExtension.swift; sourceTree = "<group>"; };
+		D75D77B0249AD86C00EBB090 /* ZTImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTImageViewExtension.swift; sourceTree = "<group>"; };
+		D75D77B2249AE33500EBB090 /* ZTPropertyListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTPropertyListHeaderView.swift; sourceTree = "<group>"; };
+		D75D77B4249AE3E200EBB090 /* ZTPropertyListHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZTPropertyListHeaderView.xib; sourceTree = "<group>"; };
+		D78137B72492EA58001FEDDE /* ZTSetupSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTSetupSearchView.swift; sourceTree = "<group>"; };
+		D78137B924930768001FEDDE /* ZTZipDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTZipDataSource.swift; sourceTree = "<group>"; };
+		D78137BB24931717001FEDDE /* ZTStringSeparatorExtansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTStringSeparatorExtansion.swift; sourceTree = "<group>"; };
+		D78137BE249419B1001FEDDE /* ZTConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTConstants.swift; sourceTree = "<group>"; };
+		D78137C024945792001FEDDE /* ZTPropertyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTPropertyListView.swift; sourceTree = "<group>"; };
+		D78137C2249457A8001FEDDE /* ZTPropertyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTPropertyListViewController.swift; sourceTree = "<group>"; };
+		D78137C4249457CA001FEDDE /* ZTPropertyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTPropertyTableViewCell.swift; sourceTree = "<group>"; };
+		D78137C82495C1D4001FEDDE /* ZTTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTTableViewDataSource.swift; sourceTree = "<group>"; };
+		D79A377224803403005899BF /* RE Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RE Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D79A377524803403005899BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D79A377724803403005899BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D79A377924803403005899BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D79A377924803403005899BF /* ZTSetupSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTSetupSearchViewController.swift; sourceTree = "<group>"; };
 		D79A377C24803403005899BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D79A377E24803407005899BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D79A378124803407005899BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,11 +89,14 @@
 		D79A378C24803407005899BF /* ZillowTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZillowTrackerTests.swift; sourceTree = "<group>"; };
 		D79A378E24803407005899BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D79A379A248051A5005899BF /* ZTHouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTHouse.swift; sourceTree = "<group>"; };
-		D79A379D2484725A005899BF /* ZTEvaluationContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTEvaluationContext.swift; sourceTree = "<group>"; };
+		D79A379D2484725A005899BF /* ZTLocalNotificationContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTLocalNotificationContext.swift; sourceTree = "<group>"; };
 		D79A379F248476F8005899BF /* ZTEvaluatedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTEvaluatedModel.swift; sourceTree = "<group>"; };
 		D79A37A12484A839005899BF /* ZTClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTClient.swift; sourceTree = "<group>"; };
 		D7A5DB112485C37900BE7BC8 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		D7A5DB142485D89F00BE7BC8 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		D7A5DB19248704DF00BE7BC8 /* ZTAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTAddress.swift; sourceTree = "<group>"; };
+		D7A5DB1B24870DC100BE7BC8 /* ZTArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTArea.swift; sourceTree = "<group>"; };
+		D7A5DB1F2488426F00BE7BC8 /* ZTProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZTProperties.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +118,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D726379E2490706100CF11DE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D726379F249070BC00CF11DE /* ZTStringExtension.swift */,
+				D78137BB24931717001FEDDE /* ZTStringSeparatorExtansion.swift */,
+				D75D77B0249AD86C00EBB090 /* ZTImageViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D78137C6249457D6001FEDDE /* SetupView */ = {
+			isa = PBXGroup;
+			children = (
+				D79A377924803403005899BF /* ZTSetupSearchViewController.swift */,
+				D78137B924930768001FEDDE /* ZTZipDataSource.swift */,
+				D78137B72492EA58001FEDDE /* ZTSetupSearchView.swift */,
+			);
+			path = SetupView;
+			sourceTree = "<group>";
+		};
+		D78137C7249457F7001FEDDE /* PropertyListView */ = {
+			isa = PBXGroup;
+			children = (
+				D78137C2249457A8001FEDDE /* ZTPropertyListViewController.swift */,
+				D78137C024945792001FEDDE /* ZTPropertyListView.swift */,
+				D78137C4249457CA001FEDDE /* ZTPropertyTableViewCell.swift */,
+				D78137C82495C1D4001FEDDE /* ZTTableViewDataSource.swift */,
+				D75D77B2249AE33500EBB090 /* ZTPropertyListHeaderView.swift */,
+				D75D77B4249AE3E200EBB090 /* ZTPropertyListHeaderView.xib */,
+			);
+			path = PropertyListView;
+			sourceTree = "<group>";
+		};
 		D79A376924803403005899BF = {
 			isa = PBXGroup;
 			children = (
@@ -99,7 +164,7 @@
 		D79A377324803403005899BF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D79A377224803403005899BF /* ZillowTracker.app */,
+				D79A377224803403005899BF /* RE Tracker.app */,
 				D79A378824803407005899BF /* ZillowTrackerTests.xctest */,
 			);
 			name = Products;
@@ -113,6 +178,7 @@
 				D79A3799248050E6005899BF /* UI */,
 				D79A3798248050B7005899BF /* Clients */,
 				D79A3797248050AF005899BF /* Models */,
+				D726379E2490706100CF11DE /* Extensions */,
 				D79A377524803403005899BF /* AppDelegate.swift */,
 				D79A377724803403005899BF /* SceneDelegate.swift */,
 				D79A377B24803403005899BF /* Main.storyboard */,
@@ -135,8 +201,13 @@
 		D79A3797248050AF005899BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D7A5DB1F2488426F00BE7BC8 /* ZTProperties.swift */,
 				D79A379A248051A5005899BF /* ZTHouse.swift */,
+				D7A5DB19248704DF00BE7BC8 /* ZTAddress.swift */,
+				D7A5DB1B24870DC100BE7BC8 /* ZTArea.swift */,
 				D79A379F248476F8005899BF /* ZTEvaluatedModel.swift */,
+				D726379C24904D4600CF11DE /* ZTNotification.swift */,
+				D78137BE249419B1001FEDDE /* ZTConstants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -152,7 +223,8 @@
 		D79A3799248050E6005899BF /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				D79A377924803403005899BF /* ViewController.swift */,
+				D78137C6249457D6001FEDDE /* SetupView */,
+				D78137C7249457F7001FEDDE /* PropertyListView */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -160,7 +232,7 @@
 		D79A379C24847233005899BF /* Contexts */ = {
 			isa = PBXGroup;
 			children = (
-				D79A379D2484725A005899BF /* ZTEvaluationContext.swift */,
+				D79A379D2484725A005899BF /* ZTLocalNotificationContext.swift */,
 			);
 			path = Contexts;
 			sourceTree = "<group>";
@@ -192,7 +264,7 @@
 			);
 			name = ZillowTracker;
 			productName = ZillowTracker;
-			productReference = D79A377224803403005899BF /* ZillowTracker.app */;
+			productReference = D79A377224803403005899BF /* RE Tracker.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D79A378724803407005899BF /* ZillowTrackerTests */ = {
@@ -256,6 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D75D77B5249AE3E200EBB090 /* ZTPropertyListHeaderView.xib in Resources */,
 				D79A378224803407005899BF /* LaunchScreen.storyboard in Resources */,
 				D79A377F24803407005899BF /* Assets.xcassets in Resources */,
 				D7A5DB122485C37900BE7BC8 /* Cartfile in Resources */,
@@ -275,7 +348,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		D7A5DB182485D8E900BE7BC8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -287,7 +360,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = "/usr/local/bin/carthage copy-frameworks";
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
 		};
@@ -298,13 +371,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D79A379E2484725A005899BF /* ZTEvaluationContext.swift in Sources */,
+				D78137BA24930768001FEDDE /* ZTZipDataSource.swift in Sources */,
+				D72637A0249070BC00CF11DE /* ZTStringExtension.swift in Sources */,
+				D78137C92495C1D4001FEDDE /* ZTTableViewDataSource.swift in Sources */,
+				D79A379E2484725A005899BF /* ZTLocalNotificationContext.swift in Sources */,
 				D79A379B248051A5005899BF /* ZTHouse.swift in Sources */,
-				D79A377A24803403005899BF /* ViewController.swift in Sources */,
+				D7A5DB202488426F00BE7BC8 /* ZTProperties.swift in Sources */,
+				D79A377A24803403005899BF /* ZTSetupSearchViewController.swift in Sources */,
+				D78137C124945792001FEDDE /* ZTPropertyListView.swift in Sources */,
+				D78137C3249457A8001FEDDE /* ZTPropertyListViewController.swift in Sources */,
+				D78137BC24931717001FEDDE /* ZTStringSeparatorExtansion.swift in Sources */,
+				D78137BF249419B1001FEDDE /* ZTConstants.swift in Sources */,
 				D79A37A0248476F8005899BF /* ZTEvaluatedModel.swift in Sources */,
+				D75D77B1249AD86C00EBB090 /* ZTImageViewExtension.swift in Sources */,
 				D79A37A22484A839005899BF /* ZTClient.swift in Sources */,
+				D75D77B3249AE33500EBB090 /* ZTPropertyListHeaderView.swift in Sources */,
 				D79A377624803403005899BF /* AppDelegate.swift in Sources */,
+				D7A5DB1A248704DF00BE7BC8 /* ZTAddress.swift in Sources */,
+				D78137C5249457CA001FEDDE /* ZTPropertyTableViewCell.swift in Sources */,
+				D7A5DB1C24870DC100BE7BC8 /* ZTArea.swift in Sources */,
 				D79A377824803403005899BF /* SceneDelegate.swift in Sources */,
+				D78137B82492EA58001FEDDE /* ZTSetupSearchView.swift in Sources */,
+				D726379D24904D4600CF11DE /* ZTNotification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +438,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -410,6 +499,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -464,19 +554,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z4W46D7MK3;
+				DEVELOPMENT_TEAM = 7JA4Q6L7YY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = ZillowTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.varvaraMironova.ZillowTracker;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.myronovaVarvara.ZillowTracker;
+				PRODUCT_NAME = "RE Tracker";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -486,19 +578,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z4W46D7MK3;
+				DEVELOPMENT_TEAM = 7JA4Q6L7YY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = ZillowTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.varvaraMironova.ZillowTracker;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.myronovaVarvara.ZillowTracker;
+				PRODUCT_NAME = "RE Tracker";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
