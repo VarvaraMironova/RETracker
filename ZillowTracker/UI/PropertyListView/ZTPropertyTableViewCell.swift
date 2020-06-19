@@ -15,8 +15,6 @@ class ZTPropertyTableViewCell: UITableViewCell {
     @IBOutlet var propertyImageView : UIImageView!
     
     func fillWithModel(model: ZTEvaluatedModel) {
-        print(model.model)
-        
         let haus = model.model
         titleLabel.text = "$\(haus.price ?? 0)"
         gradeLabel.text = String(Int(model.grade))

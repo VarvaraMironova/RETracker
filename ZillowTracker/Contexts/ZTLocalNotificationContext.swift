@@ -38,7 +38,7 @@ class ZTLocalNotificationContext: NSObject {
             
             UNUserNotificationCenter.current().add(request) { error in
                 guard error == nil else { return }
-                print("Scheduling notification with id: \(notification.identifier ?? "someID")")
+                //print("Scheduling notification with id: \(notification.identifier ?? "someID")")
             }
         }
     }

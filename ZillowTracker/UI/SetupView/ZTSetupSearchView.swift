@@ -17,6 +17,9 @@ class ZTSetupSearchView: UIView {
     @IBOutlet var priceTitleLabel     : UILabel!
     @IBOutlet var minPriceLabel       : UILabel!
     @IBOutlet var maxPriceLabel       : UILabel!
+    @IBOutlet var loadingContainer    : UIView!
+    
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,11 +40,15 @@ class ZTSetupSearchView: UIView {
         }
     }
     
-    func displayProgress(display: Bool) {
-        if display {
-            performSearchButton.isUserInteractionEnabled = false
+    func updateSubviewsWhileLoading(loadingFinished: Bool) {
+        performSearchButton.isEnabled = loadingFinished
+        
+        if loadingFinished {
+            activityIndicator.stopAnimating()
+            bringSubviewToFront(performSearchButton)
         } else {
-            performSearchButton.isUserInteractionEnabled = true
+            activityIndicator.startAnimating()
+            bringSubviewToFront(loadingContainer)
         }
     }
     

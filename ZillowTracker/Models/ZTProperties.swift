@@ -28,10 +28,8 @@ struct ZTProperties: Decodable {
         var evaluatedPool = [ZTEvaluatedModel]()
         
         var pool = properties?.filter({ (house) -> Bool in
-            if let lot = house.lot, let price = house.price {
-                return house.pricePerSquareFeet > 0 &&
-                       lot.size > 0 &&
-                       price < 500000
+            if let lot = house.lot {
+                return house.pricePerSquareFeet > 0 && lot.size > 0
             }
             
             return false
@@ -94,7 +92,9 @@ struct ZTProperties: Decodable {
                             gradeByLot = Double(maxLot - lot.size) / deltaLot
                         }
                         
-                        let grade = gradeByPricePerSquareFeet * 0.7 + gradeByLot * 0.3
+                        //Weighting coefficient for price/sqft = 0.7
+                        //Weighting coefficient for lot size   = 0.3
+                        let grade = gradeByPricePerSquareFeet * ZTConstants.wcPricePerSquareFeet + gradeByLot * ZTConstants.wcLotSize
                         let evaluatedHouse = ZTEvaluatedModel(model: house, grade: grade)
                         
                         evaluatedPool.append(evaluatedHouse)

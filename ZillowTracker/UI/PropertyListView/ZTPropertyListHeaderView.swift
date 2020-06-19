@@ -11,7 +11,7 @@ import UIKit
 class ZTPropertyListHeaderView: UITableViewHeaderFooterView {
     @IBOutlet var zipLabel: UILabel!
     
-    func fill(text: String) {
+    func fill(text: String?) {
         zipLabel.text = text
     }
 

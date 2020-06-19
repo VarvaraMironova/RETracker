@@ -8,6 +8,16 @@
 
 import Foundation
 
+extension ZTArea {
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let size = try container.decodeIfPresent(Int64.self, forKey: .size) ?? 0
+        let units = try container.decodeIfPresent(String.self, forKey: .units)
+        
+        self.init(size:size, units:units)
+    }
+}
+
 struct ZTArea: Decodable {
     var size  : Int64 = 0
     var units : String?

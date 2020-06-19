@@ -44,8 +44,13 @@ class ZTPropertyListViewController: UIViewController, UITableViewDelegate, UIGes
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ZTPropertyListHeaderView") as? ZTPropertyListHeaderView {
-            if let models = models, let firstModel = models.first, let zip = firstModel.model.address.neighborhood {
-                headerView.fill(text: zip)
+            if let models = models, let firstModel = models.first, let address = firstModel.model.address {
+                if let neighborhood = address.neighborhood {
+                    headerView.fill(text: neighborhood)
+                } else {
+                    let zip = address.zip
+                    headerView.fill(text: zip)
+                }
             }
             
             return headerView

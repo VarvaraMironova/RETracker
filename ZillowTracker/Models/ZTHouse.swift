@@ -25,7 +25,7 @@ extension ZTHouse {
         let lastUpdate = lastUpdateString?.convertToDate()
         
         self.init(identifier:identifier, link:link, address:address, beds: beds, baths:baths, price:price, area: area, lot: lot, propertyType:propertyType, thumbnail: thumbnail, lastUpdate: lastUpdate)
-  }
+    }
 }
 
 struct ZTHouse : Hashable, Decodable {
@@ -51,16 +51,14 @@ struct ZTHouse : Hashable, Decodable {
         }
     }
     
-//    enum PropertyStatus: String, Codable {
-//        case forSale = ""
-//        case pending
-//    }
-    
     enum PropertyType: String, Codable {
         case singleFamily = "single_family"
-        case condo = "condo"
-        case land = "land"
-        case multyFamily = "multi_family"
+        case condo        = "condo"
+        case land         = "land"
+        case multyFamily  = "multi_family"
+        case mobile       = "mobile"
+        case farm         = "farm"
+        case undefined    = "other"
     }
     
     enum CodingKeys: String, CodingKey {

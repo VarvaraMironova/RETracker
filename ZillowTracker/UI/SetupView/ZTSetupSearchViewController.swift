@@ -44,22 +44,59 @@ class ZTSetupSearchViewController: UIViewController, UIPickerViewDelegate {
 
     @IBAction func onPerformSearchButton(_ sender: Any) {
         if let rootView = rootView {
-            let maxPrice = String(rootView.priceSlider.value)
-            let parameters = ["price_max" : maxPrice, "postal_code" : zipDataSource.selectedZip]
+            let maxPrice = Int(rootView.priceSlider.value)
+            let parameters = ["price_max" : maxPrice, "postal_code" : zipDataSource.selectedZip] as [String : Any]
             
+            rootView.updateSubviewsWhileLoading(loadingFinished: false)
             
             DispatchQueue.main.async {[weak self] in
                 guard let strongSelf = self else { return }
-                ZTClient().performSearch(parameters: parameters) { (property) in
+                ZTClient().performSearch(parameters: parameters) { (property, error) in
                     if let property = property {
                         let evaluatedProperties = property.evaluate()
                         strongSelf.properties = evaluatedProperties
-                        let notificationContext = ZTLocalNotificationContext(properties: evaluatedProperties)
                         
-                        notificationContext.run()
+                        if evaluatedProperties.count > 0 {
+                            let notificationContext = ZTLocalNotificationContext(properties: evaluatedProperties)
+                            
+                            notificationContext.run()
+                            
+                            DispatchQueue.main.async {
+                                rootView.updateSubviewsWhileLoading(loadingFinished: true)
+                                strongSelf.performSegue(withIdentifier: strongSelf.ZTShowPropertyListSegueId, sender: true)
+                            }
+                        } else {
+                            //show alert
+                            DispatchQueue.main.async {
+                                rootView.updateSubviewsWhileLoading(loadingFinished: false)
+                                let continueAction = UIAlertAction.init(title: "Continue", style: .cancel, handler: nil)
+                                let alertcontroller = UIAlertController.init(title: "No properties found",
+                                                                             message: "Change search parameters and try again.",
+                                                                             preferredStyle: .alert)
+                                alertcontroller.addAction(continueAction)
+                                
+                                strongSelf.present(alertcontroller,
+                                                   animated: true,
+                                                   completion: nil)
+                            }
+                        }
                         
+                        return
+                    }
+                    
+                    if let error = error {
                         DispatchQueue.main.async {
-                            strongSelf.performSegue(withIdentifier: strongSelf.ZTShowPropertyListSegueId, sender: strongSelf)
+                            rootView.updateSubviewsWhileLoading(loadingFinished: false)
+                            let continueAction = UIAlertAction.init(title: "Continue", style: .cancel, handler: nil)
+                            let message = error.userInfo[ZTConstants.errorMessageKey] as? String
+                            let alertcontroller = UIAlertController.init(title: "Error occured",
+                                                                         message: message,
+                                                                         preferredStyle: .alert)
+                            alertcontroller.addAction(continueAction)
+                            
+                            strongSelf.present(alertcontroller,
+                                               animated: true,
+                                               completion: nil)
                         }
                     }
                 }
