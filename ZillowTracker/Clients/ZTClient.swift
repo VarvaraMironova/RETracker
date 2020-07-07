@@ -62,6 +62,12 @@ class ZTClient: NSObject {
         }
     }
     
+    func cancel() {
+        Alamofire.SessionManager.default.session.getTasksWithCompletionHandler { (sessionDataTask, uploadData, downloadData) in
+            sessionDataTask.forEach { $0.cancel() }
+        }
+    }
+    
     private func debugMapping(jsonData: Data) {
         do {
             if let result = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any] {

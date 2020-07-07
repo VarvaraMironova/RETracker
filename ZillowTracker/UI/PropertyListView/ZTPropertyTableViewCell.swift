@@ -9,6 +9,7 @@
 import UIKit
 
 class ZTPropertyTableViewCell: UITableViewCell {
+    @IBOutlet var blurView          : UIVisualEffectView!
     @IBOutlet var titleLabel        : UILabel!
     @IBOutlet var infoLabel         : UILabel!
     @IBOutlet var gradeLabel        : UILabel!

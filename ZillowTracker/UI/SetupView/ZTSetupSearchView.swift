@@ -41,14 +41,16 @@ class ZTSetupSearchView: UIView {
     }
     
     func updateSubviewsWhileLoading(loadingFinished: Bool) {
-        performSearchButton.isEnabled = loadingFinished
-        
-        if loadingFinished {
-            activityIndicator.stopAnimating()
-            bringSubviewToFront(performSearchButton)
-        } else {
-            activityIndicator.startAnimating()
-            bringSubviewToFront(loadingContainer)
+        DispatchQueue.main.async { [unowned self] in
+            if loadingFinished {
+                self.activityIndicator.stopAnimating()
+                self.loadingContainer.isHidden = true
+                self.performSearchButton.alpha = 1.0
+            } else {
+                self.activityIndicator.startAnimating()
+                self.loadingContainer.isHidden = false
+                self.performSearchButton.alpha = 0.3
+            }
         }
     }
     

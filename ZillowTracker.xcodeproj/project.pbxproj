@@ -12,6 +12,8 @@
 		D75D77B1249AD86C00EBB090 /* ZTImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75D77B0249AD86C00EBB090 /* ZTImageViewExtension.swift */; };
 		D75D77B3249AE33500EBB090 /* ZTPropertyListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75D77B2249AE33500EBB090 /* ZTPropertyListHeaderView.swift */; };
 		D75D77B5249AE3E200EBB090 /* ZTPropertyListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75D77B4249AE3E200EBB090 /* ZTPropertyListHeaderView.xib */; };
+		D75D77C224A25AFA00EBB090 /* Knocking.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D75D77C124A25AFA00EBB090 /* Knocking.mp3 */; };
+		D75D77C424A2778600EBB090 /* ZTSearchPropertiesContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75D77C324A2778600EBB090 /* ZTSearchPropertiesContext.swift */; };
 		D78137B82492EA58001FEDDE /* ZTSetupSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137B72492EA58001FEDDE /* ZTSetupSearchView.swift */; };
 		D78137BA24930768001FEDDE /* ZTZipDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137B924930768001FEDDE /* ZTZipDataSource.swift */; };
 		D78137BC24931717001FEDDE /* ZTStringSeparatorExtansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137BB24931717001FEDDE /* ZTStringSeparatorExtansion.swift */; };
@@ -37,6 +39,7 @@
 		D7A5DB1A248704DF00BE7BC8 /* ZTAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5DB19248704DF00BE7BC8 /* ZTAddress.swift */; };
 		D7A5DB1C24870DC100BE7BC8 /* ZTArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5DB1B24870DC100BE7BC8 /* ZTArea.swift */; };
 		D7A5DB202488426F00BE7BC8 /* ZTProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5DB1F2488426F00BE7BC8 /* ZTProperties.swift */; };
+		D7B4D3DF24B4FD4C00458D51 /* ZTVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B4D3DE24B4FD4C00458D51 /* ZTVisualEffectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,8 @@
 		D75D77B0249AD86C00EBB090 /* ZTImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTImageViewExtension.swift; sourceTree = "<group>"; };
 		D75D77B2249AE33500EBB090 /* ZTPropertyListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTPropertyListHeaderView.swift; sourceTree = "<group>"; };
 		D75D77B4249AE3E200EBB090 /* ZTPropertyListHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZTPropertyListHeaderView.xib; sourceTree = "<group>"; };
+		D75D77C124A25AFA00EBB090 /* Knocking.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Knocking.mp3; sourceTree = "<group>"; };
+		D75D77C324A2778600EBB090 /* ZTSearchPropertiesContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTSearchPropertiesContext.swift; sourceTree = "<group>"; };
 		D78137B72492EA58001FEDDE /* ZTSetupSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTSetupSearchView.swift; sourceTree = "<group>"; };
 		D78137B924930768001FEDDE /* ZTZipDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTZipDataSource.swift; sourceTree = "<group>"; };
 		D78137BB24931717001FEDDE /* ZTStringSeparatorExtansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTStringSeparatorExtansion.swift; sourceTree = "<group>"; };
@@ -97,6 +102,7 @@
 		D7A5DB19248704DF00BE7BC8 /* ZTAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTAddress.swift; sourceTree = "<group>"; };
 		D7A5DB1B24870DC100BE7BC8 /* ZTArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTArea.swift; sourceTree = "<group>"; };
 		D7A5DB1F2488426F00BE7BC8 /* ZTProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZTProperties.swift; sourceTree = "<group>"; };
+		D7B4D3DE24B4FD4C00458D51 /* ZTVisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTVisualEffectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +134,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		D75D77BD24A25AAC00EBB090 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D75D77C124A25AFA00EBB090 /* Knocking.mp3 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		D78137C6249457D6001FEDDE /* SetupView */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +161,7 @@
 				D78137C82495C1D4001FEDDE /* ZTTableViewDataSource.swift */,
 				D75D77B2249AE33500EBB090 /* ZTPropertyListHeaderView.swift */,
 				D75D77B4249AE3E200EBB090 /* ZTPropertyListHeaderView.xib */,
+				D7B4D3DE24B4FD4C00458D51 /* ZTVisualEffectView.swift */,
 			);
 			path = PropertyListView;
 			sourceTree = "<group>";
@@ -179,6 +194,7 @@
 				D79A3798248050B7005899BF /* Clients */,
 				D79A3797248050AF005899BF /* Models */,
 				D726379E2490706100CF11DE /* Extensions */,
+				D75D77BD24A25AAC00EBB090 /* Resources */,
 				D79A377524803403005899BF /* AppDelegate.swift */,
 				D79A377724803403005899BF /* SceneDelegate.swift */,
 				D79A377B24803403005899BF /* Main.storyboard */,
@@ -233,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				D79A379D2484725A005899BF /* ZTLocalNotificationContext.swift */,
+				D75D77C324A2778600EBB090 /* ZTSearchPropertiesContext.swift */,
 			);
 			path = Contexts;
 			sourceTree = "<group>";
@@ -330,6 +347,7 @@
 			files = (
 				D75D77B5249AE3E200EBB090 /* ZTPropertyListHeaderView.xib in Resources */,
 				D79A378224803407005899BF /* LaunchScreen.storyboard in Resources */,
+				D75D77C224A25AFA00EBB090 /* Knocking.mp3 in Resources */,
 				D79A377F24803407005899BF /* Assets.xcassets in Resources */,
 				D7A5DB122485C37900BE7BC8 /* Cartfile in Resources */,
 				D79A377D24803403005899BF /* Main.storyboard in Resources */,
@@ -374,6 +392,7 @@
 				D78137BA24930768001FEDDE /* ZTZipDataSource.swift in Sources */,
 				D72637A0249070BC00CF11DE /* ZTStringExtension.swift in Sources */,
 				D78137C92495C1D4001FEDDE /* ZTTableViewDataSource.swift in Sources */,
+				D75D77C424A2778600EBB090 /* ZTSearchPropertiesContext.swift in Sources */,
 				D79A379E2484725A005899BF /* ZTLocalNotificationContext.swift in Sources */,
 				D79A379B248051A5005899BF /* ZTHouse.swift in Sources */,
 				D7A5DB202488426F00BE7BC8 /* ZTProperties.swift in Sources */,
@@ -383,6 +402,7 @@
 				D78137BC24931717001FEDDE /* ZTStringSeparatorExtansion.swift in Sources */,
 				D78137BF249419B1001FEDDE /* ZTConstants.swift in Sources */,
 				D79A37A0248476F8005899BF /* ZTEvaluatedModel.swift in Sources */,
+				D7B4D3DF24B4FD4C00458D51 /* ZTVisualEffectView.swift in Sources */,
 				D75D77B1249AD86C00EBB090 /* ZTImageViewExtension.swift in Sources */,
 				D79A37A22484A839005899BF /* ZTClient.swift in Sources */,
 				D75D77B3249AE33500EBB090 /* ZTPropertyListHeaderView.swift in Sources */,

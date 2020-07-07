@@ -15,7 +15,6 @@ class ZTLocalNotificationContext: NSObject {
     init(properties: [ZTEvaluatedModel]) {
         for property in properties {
             let notification = ZTNotification(evaluatedHouse: property)
-            
             notifications.append(notification)
         }
     }
@@ -28,12 +27,13 @@ class ZTLocalNotificationContext: NSObject {
         }
     }
     
-    private func scheduleNotifications() -> Void {
+    private func schedulePropertiesNotifications() {
         for notification in notifications {
             let content = UNMutableNotificationContent()
             content.title = notification.title
+            content.sound = UNNotificationSound.init(named: UNNotificationSoundName.init("Knocking"))
             
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)
             let request = UNNotificationRequest(identifier: notification.identifier, content: content, trigger: trigger)
             
             UNUserNotificationCenter.current().add(request) { error in
@@ -43,10 +43,17 @@ class ZTLocalNotificationContext: NSObject {
         }
     }
     
+    private func scheduleSearchNotifications() {
+        let content = UNMutableNotificationContent()
+        content.title = "Search for properties is running"
+        
+        
+    }
+    
     func run() {
         requestPermission { (granted) in
             if granted {
-                self.scheduleNotifications()
+                self.schedulePropertiesNotifications()
             }
         }
     }

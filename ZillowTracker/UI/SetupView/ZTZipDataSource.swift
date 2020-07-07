@@ -16,19 +16,23 @@ class ZTZipDataSource: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
         return 1
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView                        : UIPickerView,
+                    numberOfRowsInComponent component   : Int) -> Int
+    {
         return ZTConstants.zips.count
     }
     
     //MARK: - UIPickerViewDelegate
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    func pickerView(_ pickerView            : UIPickerView,
+                    didSelectRow row        : Int,
+                    inComponent component   : Int)
     {
         selectedZip = ZTConstants.zips[row]
     }
     
-    func pickerView(_ pickerView: UIPickerView,
-                    titleForRow row: Int,
-                    forComponent component: Int) -> String?
+    func pickerView(_ pickerView            : UIPickerView,
+                    titleForRow row         : Int,
+                    forComponent component  : Int) -> String?
     {
         return ZTConstants.zips[row]
     }

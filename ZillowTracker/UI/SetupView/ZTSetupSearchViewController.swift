@@ -9,16 +9,20 @@
 import UIKit
 
 class ZTSetupSearchViewController: UIViewController, UIPickerViewDelegate {
+    //MARK: - variables & constants
     weak private var rootView: ZTSetupSearchView? {
         return viewIfLoaded as? ZTSetupSearchView
     }
     
     var zipDataSource = ZTZipDataSource()
-    var properties : [ZTEvaluatedModel]?
+    var properties    : [ZTEvaluatedModel]?
+    
+    private var searchContext : ZTSearchPropertiesContext?
+    private var isSearching   : Bool = false
     
     let ZTShowPropertyListSegueId = "showPropertyList"
     
-    //MARK: - view Life Cicle
+    //MARK: - View Life Cicle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +35,8 @@ class ZTSetupSearchViewController: UIViewController, UIPickerViewDelegate {
         }
     }
     
+    //MARK: - Segue
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let listViewController = segue.destination as? ZTPropertyListViewController
             else {
@@ -41,72 +47,82 @@ class ZTSetupSearchViewController: UIViewController, UIPickerViewDelegate {
     }
     
     //MARK: - interface Handlers
-
     @IBAction func onPerformSearchButton(_ sender: Any) {
-        if let rootView = rootView {
-            let maxPrice = Int(rootView.priceSlider.value)
-            let parameters = ["price_max" : maxPrice, "postal_code" : zipDataSource.selectedZip] as [String : Any]
-            
-            rootView.updateSubviewsWhileLoading(loadingFinished: false)
-            
-            DispatchQueue.main.async {[weak self] in
-                guard let strongSelf = self else { return }
-                ZTClient().performSearch(parameters: parameters) { (property, error) in
-                    if let property = property {
-                        let evaluatedProperties = property.evaluate()
-                        strongSelf.properties = evaluatedProperties
-                        
-                        if evaluatedProperties.count > 0 {
-                            let notificationContext = ZTLocalNotificationContext(properties: evaluatedProperties)
-                            
-                            notificationContext.run()
-                            
-                            DispatchQueue.main.async {
-                                rootView.updateSubviewsWhileLoading(loadingFinished: true)
-                                strongSelf.performSegue(withIdentifier: strongSelf.ZTShowPropertyListSegueId, sender: true)
-                            }
-                        } else {
-                            //show alert
-                            DispatchQueue.main.async {
-                                rootView.updateSubviewsWhileLoading(loadingFinished: false)
-                                let continueAction = UIAlertAction.init(title: "Continue", style: .cancel, handler: nil)
-                                let alertcontroller = UIAlertController.init(title: "No properties found",
-                                                                             message: "Change search parameters and try again.",
-                                                                             preferredStyle: .alert)
-                                alertcontroller.addAction(continueAction)
-                                
-                                strongSelf.present(alertcontroller,
-                                                   animated: true,
-                                                   completion: nil)
-                            }
-                        }
-                        
-                        return
-                    }
-                    
-                    if let error = error {
-                        DispatchQueue.main.async {
-                            rootView.updateSubviewsWhileLoading(loadingFinished: false)
-                            let continueAction = UIAlertAction.init(title: "Continue", style: .cancel, handler: nil)
-                            let message = error.userInfo[ZTConstants.errorMessageKey] as? String
-                            let alertcontroller = UIAlertController.init(title: "Error occured",
-                                                                         message: message,
-                                                                         preferredStyle: .alert)
-                            alertcontroller.addAction(continueAction)
-                            
-                            strongSelf.present(alertcontroller,
-                                               animated: true,
-                                               completion: nil)
-                        }
-                    }
-                }
-            }
+        if isSearching {
+            cancelSearch()
+        } else {
+            performSearch()
         }
     }
     
     @IBAction func onPriceSlider(_ sender: UISlider) {
         if let priceLabel = rootView?.maxPriceLabel {
             priceLabel.text = Int(sender.value).formattedWithSeparator
+        }
+    }
+    
+    //MARK: - Private
+    private func showAlert(error: NSError) {
+        let continueAction = UIAlertAction.init(title: "Continue", style: .cancel, handler: nil)
+        let title = error.userInfo[ZTConstants.errorTitleKey] as? String
+        let message = error.userInfo[ZTConstants.errorMessageKey] as? String
+        let alertcontroller = UIAlertController.init(title: title,
+                                                     message: message,
+                                                     preferredStyle: .alert)
+        alertcontroller.addAction(continueAction)
+        
+        self.present(alertcontroller,
+                     animated: true,
+                     completion: nil)
+    }
+    
+    private func performSearch() {
+        if let rootView = rootView {
+            let maxPrice = Int(rootView.priceSlider.value)
+            let zip = zipDataSource.selectedZip
+            let searchContext = ZTSearchPropertiesContext.init(maxPrice: maxPrice, zip: zip)
+            isSearching = true
+            
+            rootView.updateSubviewsWhileLoading(loadingFinished: false)
+            
+            searchContext.perform { (properties, error) in
+                rootView.updateSubviewsWhileLoading(loadingFinished: true)
+                self.isSearching = false
+                
+                if let properties = properties {
+                    self.properties = properties
+                    let notificationContext = ZTLocalNotificationContext(properties: properties)
+                    
+                    notificationContext.run()
+                    
+                    DispatchQueue.main.async {[weak self] in
+                        guard let strongSelf = self else { return }
+                        strongSelf.performSegue(withIdentifier: strongSelf.ZTShowPropertyListSegueId, sender: strongSelf)
+                    }
+                }
+                
+                if let error = error, error.code != ZTConstants.cancelErrorCode {
+                    DispatchQueue.main.async {[weak self] in
+                        guard let strongSelf = self else { return }
+                        rootView.updateSubviewsWhileLoading(loadingFinished: true)
+                        strongSelf.showAlert(error: error)
+                    }
+                }
+            }
+            
+            self.searchContext = searchContext
+        }
+    }
+    
+    private func cancelSearch() {
+        if let searchContext = searchContext {
+            searchContext.cancel()
+            self.searchContext = nil
+            isSearching = false
+            
+            if let rootView = rootView {
+                rootView.updateSubviewsWhileLoading(loadingFinished: true)
+            }
         }
     }
 }

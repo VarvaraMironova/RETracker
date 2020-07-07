@@ -24,19 +24,33 @@ enum ZTConstants {
     static let defaultRealtorAPIHeaders = ["x-rapidapi-host": "realtor.p.rapidapi.com",
                                            "x-rapidapi-key" : "263b6fe994msh72acb0d56a4cfe2p13c208jsn285920a55d4e"]
     static let realtorAPIForSale = "https://realtor.p.rapidapi.com/properties/v2/list-for-sale"
+    static let maxPriceKey       = "price_max"
+    static let zipKey            = "postal_code"
     
     //Weighting coefficients for evaluating model
     static let wcPricePerSquareFeet = 0.7
     static let wcLotSize            = 0.3
     
     //Error generic constants
-    static let errorDomain           = Bundle.main.bundleIdentifier
-    static let errorDomain_undefined = "undefinedErrorDomain"
-    static let responseErrorCode     = NSURLErrorBadServerResponse
-    static let parsingErrorCode      = NSURLErrorCannotDecodeContentData
-    static let mappingErrorCode      = 90
-    static let errorMessageKey       = "message"
-    static let responseErrorUserInfo = [errorMessageKey : "Check network connection or server does not respond"]
-    static let parsingErrorUserInfo  = [errorMessageKey : "Parsing failed"]
-    static let mappingErrorUserInfo  = [errorMessageKey : "Mapping failed"]
+    static let errorDomain            = Bundle.main.bundleIdentifier
+    static let errorDomain_undefined  = "undefinedErrorDomain"
+    static let responseErrorCode      = NSURLErrorBadServerResponse
+    static let parsingErrorCode       = NSURLErrorCannotDecodeContentData
+    static let mappingErrorCode       = 90
+    static let noResultsErrorCode     = 99
+    static let cancelErrorCode        = -999
+    static let errorMessageKey        = "message"
+    static let errorTitleKey          = "title"
+    static let responseErrorUserInfo  = [errorTitleKey: "Error occured",
+                                        errorMessageKey : "Check network connection or server does not respond."]
+    static let parsingErrorUserInfo   = [errorTitleKey: "Error occured",
+                                        errorMessageKey : "Parsing failed."]
+    static let mappingErrorUserInfo   = [errorTitleKey: "Error occured",
+                                        errorMessageKey : "Mapping failed."]
+    static let noResultsErrorUserInfo = [errorTitleKey: "No properties found",
+                                        errorMessageKey : "Change search parameters and try again."]
+    
+    //background tasks
+    static let defaultIdentifier        = "com.myronovaVarvara.ZillowTracker"
+    static let backgroundTaskIdentifier = "\(Bundle.main.bundleIdentifier ?? defaultIdentifier).runSearch"
 }
