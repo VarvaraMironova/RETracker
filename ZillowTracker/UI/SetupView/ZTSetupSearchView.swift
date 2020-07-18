@@ -25,17 +25,17 @@ class ZTSetupSearchView: UIView {
         super.awakeFromNib()
         
         //setup slider
-        priceSlider.maximumValue = Float(ZTConstants.maxPrice)
-        priceSlider.minimumValue = Float(ZTConstants.minPrice)
-        priceSlider.value = Float(ZTConstants.defaultPrice)
+        priceSlider.maximumValue = Float(ZTUIConstants.maxPrice)
+        priceSlider.minimumValue = Float(ZTUIConstants.minPrice)
+        priceSlider.value = Float(ZTUIConstants.defaultPrice)
         
         //setup labels
-        minPriceLabel.text = ZTConstants.minPrice.formattedWithSeparator
-        maxPriceLabel.text = ZTConstants.defaultPrice.formattedWithSeparator
+        minPriceLabel.text = ZTUIConstants.minPrice.formattedWithSeparator
+        maxPriceLabel.text = ZTUIConstants.defaultPrice.formattedWithSeparator
     }
     
     func setupDefaultPickerView() {
-        if let defaultZipIndex = ZTConstants.zips.firstIndex(of: ZTConstants.defaultZip) {
+        if let defaultZipIndex = ZTUIConstants.zips.firstIndex(of: ZTUIConstants.defaultZip) {
             zipPickerView.selectRow(defaultZipIndex, inComponent: 0, animated: false)
         }
     }

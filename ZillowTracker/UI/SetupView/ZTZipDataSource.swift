@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class ZTZipDataSource: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
-    var selectedZip : String = ZTConstants.defaultZip
+    var selectedZip : String = ZTUIConstants.defaultZip
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -19,7 +19,7 @@ class ZTZipDataSource: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView                        : UIPickerView,
                     numberOfRowsInComponent component   : Int) -> Int
     {
-        return ZTConstants.zips.count
+        return ZTUIConstants.zips.count
     }
     
     //MARK: - UIPickerViewDelegate
@@ -27,13 +27,13 @@ class ZTZipDataSource: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
                     didSelectRow row        : Int,
                     inComponent component   : Int)
     {
-        selectedZip = ZTConstants.zips[row]
+        selectedZip = ZTUIConstants.zips[row]
     }
     
     func pickerView(_ pickerView            : UIPickerView,
                     titleForRow row         : Int,
                     forComponent component  : Int) -> String?
     {
-        return ZTConstants.zips[row]
+        return ZTUIConstants.zips[row]
     }
 }

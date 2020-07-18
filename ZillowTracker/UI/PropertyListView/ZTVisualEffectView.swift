@@ -24,7 +24,7 @@ class ZTVisualEffectView: UIVisualEffectView {
         self.intensity = intensity
         
         super.init(effect: nil)
-        
+         
         animator = UIViewPropertyAnimator(duration: 1, curve: .linear) { [unowned self] in
             self.effect = effect
         }

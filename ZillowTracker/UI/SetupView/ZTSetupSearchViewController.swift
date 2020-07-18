@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ZTModels
 
 class ZTSetupSearchViewController: UIViewController, UIPickerViewDelegate {
     //MARK: - variables & constants
@@ -64,8 +65,8 @@ class ZTSetupSearchViewController: UIViewController, UIPickerViewDelegate {
     //MARK: - Private
     private func showAlert(error: NSError) {
         let continueAction = UIAlertAction.init(title: "Continue", style: .cancel, handler: nil)
-        let title = error.userInfo[ZTConstants.errorTitleKey] as? String
-        let message = error.userInfo[ZTConstants.errorMessageKey] as? String
+        let title = error.userInfo[ZTUIConstants.errorTitleKey] as? String
+        let message = error.userInfo[ZTUIConstants.errorMessageKey] as? String
         let alertcontroller = UIAlertController.init(title: title,
                                                      message: message,
                                                      preferredStyle: .alert)
@@ -80,7 +81,8 @@ class ZTSetupSearchViewController: UIViewController, UIPickerViewDelegate {
         if let rootView = rootView {
             let maxPrice = Int(rootView.priceSlider.value)
             let zip = zipDataSource.selectedZip
-            let searchContext = ZTSearchPropertiesContext.init(maxPrice: maxPrice, zip: zip)
+            let parameters = [ZTUIConstants.zipKey : zip, ZTUIConstants.maxPriceKey : maxPrice] as [String : Any]
+            let searchContext = ZTSearchPropertiesContext.init(parameters: parameters)
             isSearching = true
             
             rootView.updateSubviewsWhileLoading(loadingFinished: false)
@@ -91,17 +93,14 @@ class ZTSetupSearchViewController: UIViewController, UIPickerViewDelegate {
                 
                 if let properties = properties {
                     self.properties = properties
-                    let notificationContext = ZTLocalNotificationContext(properties: properties)
-                    
-                    notificationContext.run()
-                    
+        
                     DispatchQueue.main.async {[weak self] in
                         guard let strongSelf = self else { return }
                         strongSelf.performSegue(withIdentifier: strongSelf.ZTShowPropertyListSegueId, sender: strongSelf)
                     }
                 }
                 
-                if let error = error, error.code != ZTConstants.cancelErrorCode {
+                if let error = error, error.code != ZTUIConstants.cancelErrorCode {
                     DispatchQueue.main.async {[weak self] in
                         guard let strongSelf = self else { return }
                         rootView.updateSubviewsWhileLoading(loadingFinished: true)

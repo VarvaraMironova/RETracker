@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ZTModels
 
 class ZTTableViewDataSource: NSObject, UITableViewDataSource {
     var models : [ZTEvaluatedModel]

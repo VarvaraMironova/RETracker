@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ZTModels
 
 class ZTPropertyTableViewCell: UITableViewCell {
     @IBOutlet var blurView          : UIVisualEffectView!
@@ -22,11 +23,11 @@ class ZTPropertyTableViewCell: UITableViewCell {
         var text = "Bedrooms :  \(haus.beds ?? 0) \nBathrooms:  \(haus.baths ?? 0)"
         
         if let area = haus.area {
-            text.append("\n\nSize:  \(area.size) sqft")
+            text.append("\n\nSize:  \(area.size) \(area.units ?? "sqft")")
         }
         
         if let lot = haus.lot {
-            text.append("\nLot  :  \(lot.size) sqft")
+            text.append("\nLot  :  \(lot.size)  \(lot.units ?? "sqft")")
         }
         
         infoLabel.text = text

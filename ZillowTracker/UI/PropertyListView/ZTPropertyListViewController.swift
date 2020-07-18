@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ZTModels
 
 class ZTPropertyListViewController: UIViewController, UITableViewDelegate, UIGestureRecognizerDelegate {
     var models              : [ZTEvaluatedModel]?
