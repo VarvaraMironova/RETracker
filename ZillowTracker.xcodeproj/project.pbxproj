@@ -28,8 +28,13 @@
 		D77CA45A24C27921004554E1 /* ZTLocalNotificationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77CA45924C27921004554E1 /* ZTLocalNotificationContext.swift */; };
 		D77CA45B24C279BA004554E1 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75139D524BD1E4A00CF35BE /* UserNotifications.framework */; };
 		D77CA45D24C279D4004554E1 /* ZTSearchPropertiesContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77CA45C24C279D4004554E1 /* ZTSearchPropertiesContext.swift */; };
+		D77CA46A24C37D31004554E1 /* ZTContextConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77CA46924C37D31004554E1 /* ZTContextConstants.swift */; };
+		D77CA49E24C4E7AA004554E1 /* AdjustableVisualEffectView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77CA49B24C4E796004554E1 /* AdjustableVisualEffectView.framework */; };
+		D77CA49F24C4E7AA004554E1 /* AdjustableVisualEffectView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D77CA49B24C4E796004554E1 /* AdjustableVisualEffectView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D77CA4A024C4E7B1004554E1 /* AdjustableVisualEffectView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77CA49B24C4E796004554E1 /* AdjustableVisualEffectView.framework */; };
+		D77CA4A124C4E7B1004554E1 /* AdjustableVisualEffectView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D77CA49B24C4E796004554E1 /* AdjustableVisualEffectView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D78137B82492EA58001FEDDE /* ZTSetupSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137B72492EA58001FEDDE /* ZTSetupSearchView.swift */; };
-		D78137BA24930768001FEDDE /* ZTZipDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137B924930768001FEDDE /* ZTZipDataSource.swift */; };
+		D78137BA24930768001FEDDE /* ZTPickerViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137B924930768001FEDDE /* ZTPickerViewDataSource.swift */; };
 		D78137BC24931717001FEDDE /* ZTStringSeparatorExtansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137BB24931717001FEDDE /* ZTStringSeparatorExtansion.swift */; };
 		D78137C124945792001FEDDE /* ZTPropertyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137C024945792001FEDDE /* ZTPropertyListView.swift */; };
 		D78137C3249457A8001FEDDE /* ZTPropertyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137C2249457A8001FEDDE /* ZTPropertyListViewController.swift */; };
@@ -42,7 +47,6 @@
 		D79A377F24803407005899BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D79A377E24803407005899BF /* Assets.xcassets */; };
 		D79A378224803407005899BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D79A378024803407005899BF /* LaunchScreen.storyboard */; };
 		D79A378D24803407005899BF /* ZillowTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A378C24803407005899BF /* ZillowTrackerTests.swift */; };
-		D7B4D3DF24B4FD4C00458D51 /* ZTVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B4D3DE24B4FD4C00458D51 /* ZTVisualEffectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +78,20 @@
 			remoteGlobalIDString = D77CA3EB24C241DE004554E1;
 			remoteInfo = ZTModelsTests;
 		};
+		D77CA49A24C4E796004554E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D77CA49524C4E796004554E1 /* AdjustableVisualEffectView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D77CA47924C4E6C8004554E1;
+			remoteInfo = AdjustableVisualEffectView;
+		};
+		D77CA49C24C4E796004554E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D77CA49524C4E796004554E1 /* AdjustableVisualEffectView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D77CA48224C4E6C8004554E1;
+			remoteInfo = AdjustableVisualEffectViewTests;
+		};
 		D79A378924803407005899BF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D79A376A24803403005899BF /* Project object */;
@@ -96,6 +114,17 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D77CA4A224C4E7B2004554E1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D77CA4A124C4E7B1004554E1 /* AdjustableVisualEffectView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D7A5DB172485D89F00BE7BC8 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -103,6 +132,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				D77CA42524C24757004554E1 /* ZTModels.framework in Embed Frameworks */,
+				D77CA49F24C4E7AA004554E1 /* AdjustableVisualEffectView.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,8 +161,10 @@
 		D77CA45924C27921004554E1 /* ZTLocalNotificationContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZTLocalNotificationContext.swift; sourceTree = "<group>"; };
 		D77CA45C24C279D4004554E1 /* ZTSearchPropertiesContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZTSearchPropertiesContext.swift; sourceTree = "<group>"; };
 		D77CA46124C28112004554E1 /* ZTNotificationService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZTNotificationService.entitlements; sourceTree = "<group>"; };
+		D77CA46924C37D31004554E1 /* ZTContextConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTContextConstants.swift; sourceTree = "<group>"; };
+		D77CA49524C4E796004554E1 /* AdjustableVisualEffectView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AdjustableVisualEffectView.xcodeproj; path = AdjustableVisualEffectView/AdjustableVisualEffectView.xcodeproj; sourceTree = "<group>"; };
 		D78137B72492EA58001FEDDE /* ZTSetupSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTSetupSearchView.swift; sourceTree = "<group>"; };
-		D78137B924930768001FEDDE /* ZTZipDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTZipDataSource.swift; sourceTree = "<group>"; };
+		D78137B924930768001FEDDE /* ZTPickerViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTPickerViewDataSource.swift; sourceTree = "<group>"; };
 		D78137BB24931717001FEDDE /* ZTStringSeparatorExtansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTStringSeparatorExtansion.swift; sourceTree = "<group>"; };
 		D78137C024945792001FEDDE /* ZTPropertyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTPropertyListView.swift; sourceTree = "<group>"; };
 		D78137C2249457A8001FEDDE /* ZTPropertyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTPropertyListViewController.swift; sourceTree = "<group>"; };
@@ -149,7 +181,6 @@
 		D79A378824803407005899BF /* ZillowTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZillowTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D79A378C24803407005899BF /* ZillowTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZillowTrackerTests.swift; sourceTree = "<group>"; };
 		D79A378E24803407005899BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D7B4D3DE24B4FD4C00458D51 /* ZTVisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTVisualEffectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +191,7 @@
 				D75139ED24BD1EB100CF35BE /* UserNotificationsUI.framework in Frameworks */,
 				D77CA42824C24777004554E1 /* ZTModels.framework in Frameworks */,
 				D75139EC24BD1EB100CF35BE /* UserNotifications.framework in Frameworks */,
+				D77CA4A024C4E7B1004554E1 /* AdjustableVisualEffectView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +208,7 @@
 			files = (
 				D77CA45B24C279BA004554E1 /* UserNotifications.framework in Frameworks */,
 				D77CA42424C24757004554E1 /* ZTModels.framework in Frameworks */,
+				D77CA49E24C4E7AA004554E1 /* AdjustableVisualEffectView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +276,7 @@
 			children = (
 				D77CA45C24C279D4004554E1 /* ZTSearchPropertiesContext.swift */,
 				D77CA45924C27921004554E1 /* ZTLocalNotificationContext.swift */,
+				D77CA46924C37D31004554E1 /* ZTContextConstants.swift */,
 			);
 			path = Contexts;
 			sourceTree = "<group>";
@@ -267,11 +301,20 @@
 			name = SupportingFiles;
 			sourceTree = "<group>";
 		};
+		D77CA49624C4E796004554E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D77CA49B24C4E796004554E1 /* AdjustableVisualEffectView.framework */,
+				D77CA49D24C4E796004554E1 /* AdjustableVisualEffectViewTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		D78137C6249457D6001FEDDE /* SetupView */ = {
 			isa = PBXGroup;
 			children = (
 				D79A377924803403005899BF /* ZTSetupSearchViewController.swift */,
-				D78137B924930768001FEDDE /* ZTZipDataSource.swift */,
+				D78137B924930768001FEDDE /* ZTPickerViewDataSource.swift */,
 				D78137B72492EA58001FEDDE /* ZTSetupSearchView.swift */,
 			);
 			path = SetupView;
@@ -286,7 +329,6 @@
 				D78137C82495C1D4001FEDDE /* ZTTableViewDataSource.swift */,
 				D75D77B2249AE33500EBB090 /* ZTPropertyListHeaderView.swift */,
 				D75D77B4249AE3E200EBB090 /* ZTPropertyListHeaderView.xib */,
-				D7B4D3DE24B4FD4C00458D51 /* ZTVisualEffectView.swift */,
 			);
 			path = PropertyListView;
 			sourceTree = "<group>";
@@ -299,6 +341,7 @@
 				D75139EE24BD1EB100CF35BE /* ZTNorificationContent */,
 				D7513A0024BD1EC800CF35BE /* ZTNotificationService */,
 				D79A377324803403005899BF /* Products */,
+				D77CA49524C4E796004554E1 /* AdjustableVisualEffectView.xcodeproj */,
 				D77CA41824C24681004554E1 /* ZTModels.xcodeproj */,
 				D7A5DB132485D89F00BE7BC8 /* Frameworks */,
 			);
@@ -366,6 +409,7 @@
 				D75139E724BD1EB100CF35BE /* Sources */,
 				D75139E824BD1EB100CF35BE /* Frameworks */,
 				D75139E924BD1EB100CF35BE /* Resources */,
+				D77CA4A224C4E7B2004554E1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -471,6 +515,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = D77CA49624C4E796004554E1 /* Products */;
+					ProjectRef = D77CA49524C4E796004554E1 /* AdjustableVisualEffectView.xcodeproj */;
+				},
+				{
 					ProductGroup = D77CA41924C24681004554E1 /* Products */;
 					ProjectRef = D77CA41824C24681004554E1 /* ZTModels.xcodeproj */;
 				},
@@ -498,6 +546,20 @@
 			fileType = wrapper.cfbundle;
 			path = ZTModelsTests.xctest;
 			remoteRef = D77CA41F24C24682004554E1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D77CA49B24C4E796004554E1 /* AdjustableVisualEffectView.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AdjustableVisualEffectView.framework;
+			remoteRef = D77CA49A24C4E796004554E1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D77CA49D24C4E796004554E1 /* AdjustableVisualEffectViewTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AdjustableVisualEffectViewTests.xctest;
+			remoteRef = D77CA49C24C4E796004554E1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -581,15 +643,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D78137BA24930768001FEDDE /* ZTZipDataSource.swift in Sources */,
+				D78137BA24930768001FEDDE /* ZTPickerViewDataSource.swift in Sources */,
 				D72637A0249070BC00CF11DE /* ZTStringExtension.swift in Sources */,
 				D78137C92495C1D4001FEDDE /* ZTTableViewDataSource.swift in Sources */,
+				D77CA46A24C37D31004554E1 /* ZTContextConstants.swift in Sources */,
 				D79A377A24803403005899BF /* ZTSetupSearchViewController.swift in Sources */,
 				D78137C124945792001FEDDE /* ZTPropertyListView.swift in Sources */,
 				D78137C3249457A8001FEDDE /* ZTPropertyListViewController.swift in Sources */,
 				D77CA45A24C27921004554E1 /* ZTLocalNotificationContext.swift in Sources */,
 				D78137BC24931717001FEDDE /* ZTStringSeparatorExtansion.swift in Sources */,
-				D7B4D3DF24B4FD4C00458D51 /* ZTVisualEffectView.swift in Sources */,
 				D74AAB8624B5520B00996F1A /* ZTDateExtension.swift in Sources */,
 				D77CA45D24C279D4004554E1 /* ZTSearchPropertiesContext.swift in Sources */,
 				D75D77B3249AE33500EBB090 /* ZTPropertyListHeaderView.swift in Sources */,
@@ -661,6 +723,7 @@
 		D75139F924BD1EB100CF35BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7JA4Q6L7YY;
 				INFOPLIST_FILE = ZTNorificationContent/Info.plist;
@@ -682,6 +745,7 @@
 		D75139FA24BD1EB100CF35BE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7JA4Q6L7YY;
 				INFOPLIST_FILE = ZTNorificationContent/Info.plist;

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ZTModels
 
 class ZTSetupSearchView: UIView {
     @IBOutlet var titleLabel          : UILabel!
@@ -27,17 +28,19 @@ class ZTSetupSearchView: UIView {
         //setup slider
         priceSlider.maximumValue = Float(ZTUIConstants.maxPrice)
         priceSlider.minimumValue = Float(ZTUIConstants.minPrice)
-        priceSlider.value = Float(ZTUIConstants.defaultPrice)
         
         //setup labels
         minPriceLabel.text = ZTUIConstants.minPrice.formattedWithSeparator
         maxPriceLabel.text = ZTUIConstants.defaultPrice.formattedWithSeparator
     }
     
-    func setupDefaultPickerView() {
-        if let defaultZipIndex = ZTUIConstants.zips.firstIndex(of: ZTUIConstants.defaultZip) {
-            zipPickerView.selectRow(defaultZipIndex, inComponent: 0, animated: false)
+    func setupFromSettings(settings: ZTSearchSettings) {
+        if let index = ZTUIConstants.zips.firstIndex(of: settings.zip) {
+            zipPickerView.selectRow(index, inComponent: 0, animated: false)
         }
+        
+        priceSlider.value = Float(settings.maxPrice)
+        maxPriceLabel.text = settings.maxPrice.formattedWithSeparator
     }
     
     func updateSubviewsWhileLoading(loadingFinished: Bool) {

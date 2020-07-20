@@ -15,42 +15,46 @@ class ZTSetupSearchViewController: UIViewController, UIPickerViewDelegate {
         return viewIfLoaded as? ZTSetupSearchView
     }
     
-    var zipDataSource = ZTZipDataSource()
-    var properties    : [ZTEvaluatedModel]?
+    var propertyList : [ZTEvaluatedModel]?
     
-    private var searchContext : ZTSearchPropertiesContext?
-    private var isSearching   : Bool = false
+    var pickerViewDataSource : ZTPickerViewDataSource?
     
-    let ZTShowPropertyListSegueId = "showPropertyList"
+    private var searchContext  : ZTSearchPropertiesContext?
+    private var searchSettings = ZTSearchSettings()
     
     //MARK: - View Life Cicle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let rootView = rootView {
-            rootView.zipPickerView.dataSource = zipDataSource
-            rootView.zipPickerView.delegate = zipDataSource
+            let pickerViewDataSource = ZTPickerViewDataSource()
+            rootView.zipPickerView.dataSource = pickerViewDataSource
             
-            rootView.setupDefaultPickerView()
+            self.pickerViewDataSource = pickerViewDataSource
+            
+            rootView.setupFromSettings(settings: searchSettings)
         }
     }
     
     //MARK: - Segue
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let listViewController = segue.destination as? ZTPropertyListViewController
             else {
                 return
         }
         
-        listViewController.models = properties
+        listViewController.models = propertyList
     }
     
     //MARK: - interface Handlers
     @IBAction func onPerformSearchButton(_ sender: Any) {
-        if isSearching {
-            cancelSearch()
+        if let searchContext = searchContext {
+            switch searchContext.state {
+            case .searching:
+                cancelSearch()
+            default:
+                performSearch()
+            }
         } else {
             performSearch()
         }
@@ -58,13 +62,32 @@ class ZTSetupSearchViewController: UIViewController, UIPickerViewDelegate {
     
     @IBAction func onPriceSlider(_ sender: UISlider) {
         if let priceLabel = rootView?.maxPriceLabel {
-            priceLabel.text = Int(sender.value).formattedWithSeparator
+            let value = Int(sender.value)
+            priceLabel.text = value.formattedWithSeparator
+            searchSettings.maxPrice = value
         }
+    }
+    
+    //MARK: - UIPickerViewDelegate
+    func pickerView(_ pickerView            : UIPickerView,
+                    didSelectRow row        : Int,
+                    inComponent component   : Int)
+    {
+        searchSettings.zip = ZTUIConstants.zips[row]
+    }
+    
+    func pickerView(_ pickerView            : UIPickerView,
+                    titleForRow row         : Int,
+                    forComponent component  : Int) -> String?
+    {
+        return ZTUIConstants.zips[row]
     }
     
     //MARK: - Private
     private func showAlert(error: NSError) {
-        let continueAction = UIAlertAction.init(title: "Continue", style: .cancel, handler: nil)
+        let continueAction = UIAlertAction.init(title: "Continue",
+                                                style: .cancel,
+                                                handler: nil)
         let title = error.userInfo[ZTUIConstants.errorTitleKey] as? String
         let message = error.userInfo[ZTUIConstants.errorMessageKey] as? String
         let alertcontroller = UIAlertController.init(title: title,
@@ -79,24 +102,20 @@ class ZTSetupSearchViewController: UIViewController, UIPickerViewDelegate {
     
     private func performSearch() {
         if let rootView = rootView {
-            let maxPrice = Int(rootView.priceSlider.value)
-            let zip = zipDataSource.selectedZip
-            let parameters = [ZTUIConstants.zipKey : zip, ZTUIConstants.maxPriceKey : maxPrice] as [String : Any]
-            let searchContext = ZTSearchPropertiesContext.init(parameters: parameters)
-            isSearching = true
+            let searchContext = ZTSearchPropertiesContext.init(searchSettings: searchSettings)
+            searchSettings.save()
             
             rootView.updateSubviewsWhileLoading(loadingFinished: false)
             
             searchContext.perform { (properties, error) in
                 rootView.updateSubviewsWhileLoading(loadingFinished: true)
-                self.isSearching = false
                 
                 if let properties = properties {
-                    self.properties = properties
+                    self.propertyList = properties
         
                     DispatchQueue.main.async {[weak self] in
                         guard let strongSelf = self else { return }
-                        strongSelf.performSegue(withIdentifier: strongSelf.ZTShowPropertyListSegueId, sender: strongSelf)
+                        strongSelf.performSegue(withIdentifier: ZTUIConstants.ZTShowPropertyListSegueId, sender: strongSelf)
                     }
                 }
                 
@@ -117,7 +136,6 @@ class ZTSetupSearchViewController: UIViewController, UIPickerViewDelegate {
         if let searchContext = searchContext {
             searchContext.cancel()
             self.searchContext = nil
-            isSearching = false
             
             if let rootView = rootView {
                 rootView.updateSubviewsWhileLoading(loadingFinished: true)

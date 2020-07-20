@@ -9,6 +9,7 @@
 import UIKit
 import UserNotifications
 import UserNotificationsUI
+import ZTModels
 
 class NotificationViewController: UIViewController, UNNotificationContentExtension {
     weak private var rootView: ZTNotificationView? {
@@ -17,7 +18,16 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     
     
     func didReceive(_ notification: UNNotification) {
-        
+        let content = notification.request.content
+        let userInfo = content.userInfo
+
+        if let notificationData = userInfo["notification"] as? Data {
+            let decoder = JSONDecoder()
+
+            if let notification = try? decoder.decode(ZTNotification.self, from: notificationData), let rootView = rootView {
+                rootView.fill(notification: notification)
+            }
+        }
     }
 
 }

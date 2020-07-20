@@ -17,22 +17,22 @@ class ZTPropertyTableViewCell: UITableViewCell {
     @IBOutlet var propertyImageView : UIImageView!
     
     func fillWithModel(model: ZTEvaluatedModel) {
-        let haus = model.model
-        titleLabel.text = "$\(haus.price ?? 0)"
+        let house = model.model
+        titleLabel.text = "$\(house.price ?? 0)"
         gradeLabel.text = String(Int(model.grade))
-        var text = "Bedrooms :  \(haus.beds ?? 0) \nBathrooms:  \(haus.baths ?? 0)"
+        var text = "Bedrooms :  \(house.beds ?? 0) \nBathrooms:  \(house.baths ?? 0)"
         
-        if let area = haus.area {
+        if let area = house.area {
             text.append("\n\nSize:  \(area.size) \(area.units ?? "sqft")")
         }
         
-        if let lot = haus.lot {
+        if let lot = house.lot {
             text.append("\nLot  :  \(lot.size)  \(lot.units ?? "sqft")")
         }
         
         infoLabel.text = text
         
-        if let imagePath = haus.thumbnail {
+        if let imagePath = house.thumbnail {
             propertyImageView.imageFromUrl(urlString: imagePath)
         }
     }

@@ -10,40 +10,8 @@ import UIKit
 import UserNotifications
 import ZTModels
 
-class ZTNotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
-    
-    func userNotificationCenter(_ center                                : UNUserNotificationCenter,
-                                willPresent notification                : UNNotification,
-                                withCompletionHandler completionHandler : @escaping (UNNotificationPresentationOptions) -> Void)
-    {
-        completionHandler([.alert, .sound])
-    }
-    
-    func userNotificationCenter(_ center                                : UNUserNotificationCenter,
-                                didReceive response                     : UNNotificationResponse,
-                                withCompletionHandler completionHandler : @escaping () -> Void)
-    {
-        switch response.actionIdentifier {
-        case UNNotificationDismissActionIdentifier:
-            print("Dismiss Action")
-        case UNNotificationDefaultActionIdentifier:
-            print("Open Action")
-        case "Snooze":
-            print("Snooze")
-        case "Delete":
-            print("Delete")
-        default:
-            print("default")
-        }
-        
-        completionHandler()
-    }
-}
-
 class ZTLocalNotificationContext: NSObject {
     private var notifications = [ZTNotification]()
-    
-    var notificationDelegate : ZTNotificationDelegate?
     
     init(properties: [ZTEvaluatedModel]) {
         for property in properties {
@@ -57,18 +25,20 @@ class ZTLocalNotificationContext: NSObject {
         center.requestAuthorization(options: [.alert, .sound]) { granted, error in
             completion(granted)
         }
-        
-        let delegate = ZTNotificationDelegate()
-        center.delegate = delegate
-        notificationDelegate = delegate
     }
     
     private func scheduleNotifications() {
         for notification in notifications {
             let content = UNMutableNotificationContent()
+            content.categoryIdentifier = notification.category
             content.title = notification.title
-            let soundName = UNNotificationSoundName.init(ZTUIConstants.bellSound)
+            let soundName = UNNotificationSoundName.init(notification.soundName)
             content.sound = UNNotificationSound(named: soundName)
+            let encoder = JSONEncoder()
+            
+            if let data = try? encoder.encode(notification) {
+                content.userInfo = ["notification" : data]
+            }
             
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)
             let request = UNNotificationRequest(identifier: notification.identifier, content: content, trigger: trigger)

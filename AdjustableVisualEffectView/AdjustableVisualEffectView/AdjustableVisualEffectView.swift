@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ZTVisualEffectView: UIVisualEffectView {
+public class AdjustableVisualEffectView: UIVisualEffectView {
     /// Visual effect view customization with given effect and its intensity
     ///
     /// - Parameters:
