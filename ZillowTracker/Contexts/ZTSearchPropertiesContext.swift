@@ -49,9 +49,6 @@ class ZTSearchPropertiesContext: NSObject {
                 }
                 
                 if let result = result, result.count > 0 {
-                    //schedule notifications
-                    let notificationContext = ZTLocalNotificationContext.init(properties: result)
-                    notificationContext.run()
                     self.state = .finished
                     
                     completion(result, nil)

@@ -33,6 +33,7 @@
 		D77CA49F24C4E7AA004554E1 /* AdjustableVisualEffectView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D77CA49B24C4E796004554E1 /* AdjustableVisualEffectView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D77CA4A024C4E7B1004554E1 /* AdjustableVisualEffectView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77CA49B24C4E796004554E1 /* AdjustableVisualEffectView.framework */; };
 		D77CA4A124C4E7B1004554E1 /* AdjustableVisualEffectView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D77CA49B24C4E796004554E1 /* AdjustableVisualEffectView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D77CA4A624C64F30004554E1 /* ZTBackgroundTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77CA4A524C64F30004554E1 /* ZTBackgroundTaskManager.swift */; };
 		D78137B82492EA58001FEDDE /* ZTSetupSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137B72492EA58001FEDDE /* ZTSetupSearchView.swift */; };
 		D78137BA24930768001FEDDE /* ZTPickerViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137B924930768001FEDDE /* ZTPickerViewDataSource.swift */; };
 		D78137BC24931717001FEDDE /* ZTStringSeparatorExtansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137BB24931717001FEDDE /* ZTStringSeparatorExtansion.swift */; };
@@ -163,6 +164,7 @@
 		D77CA46124C28112004554E1 /* ZTNotificationService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZTNotificationService.entitlements; sourceTree = "<group>"; };
 		D77CA46924C37D31004554E1 /* ZTContextConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTContextConstants.swift; sourceTree = "<group>"; };
 		D77CA49524C4E796004554E1 /* AdjustableVisualEffectView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AdjustableVisualEffectView.xcodeproj; path = AdjustableVisualEffectView/AdjustableVisualEffectView.xcodeproj; sourceTree = "<group>"; };
+		D77CA4A524C64F30004554E1 /* ZTBackgroundTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTBackgroundTaskManager.swift; sourceTree = "<group>"; };
 		D78137B72492EA58001FEDDE /* ZTSetupSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTSetupSearchView.swift; sourceTree = "<group>"; };
 		D78137B924930768001FEDDE /* ZTPickerViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTPickerViewDataSource.swift; sourceTree = "<group>"; };
 		D78137BB24931717001FEDDE /* ZTStringSeparatorExtansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTStringSeparatorExtansion.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				D77CA45C24C279D4004554E1 /* ZTSearchPropertiesContext.swift */,
 				D77CA45924C27921004554E1 /* ZTLocalNotificationContext.swift */,
 				D77CA46924C37D31004554E1 /* ZTContextConstants.swift */,
+				D77CA4A524C64F30004554E1 /* ZTBackgroundTaskManager.swift */,
 			);
 			path = Contexts;
 			sourceTree = "<group>";
@@ -659,6 +662,7 @@
 				D78137C5249457CA001FEDDE /* ZTPropertyTableViewCell.swift in Sources */,
 				D79A377824803403005899BF /* SceneDelegate.swift in Sources */,
 				D78137B82492EA58001FEDDE /* ZTSetupSearchView.swift in Sources */,
+				D77CA4A624C64F30004554E1 /* ZTBackgroundTaskManager.swift in Sources */,
 				D77CA42D24C24D8F004554E1 /* ZTUIConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

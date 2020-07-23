@@ -18,4 +18,6 @@ enum ZTContextConstants {
     static let errorTitleKey          = "title"
     static let noResultsErrorUserInfo = [errorTitleKey  : "No properties found",
                                         errorMessageKey : "Change search parameters and try again."]
+    
+    static let backgroundTaskID       = "com.myronovaVarvara.propertySearch"
 }

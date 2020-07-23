@@ -27,7 +27,7 @@ class ZTLocalNotificationContext: NSObject {
         }
     }
     
-    private func scheduleNotifications() {
+    private func scheduleNotifications(completion: @escaping (Bool) -> Void) {
         for notification in notifications {
             let content = UNMutableNotificationContent()
             content.categoryIdentifier = notification.category
@@ -45,15 +45,18 @@ class ZTLocalNotificationContext: NSObject {
             
             UNUserNotificationCenter.current().add(request) { error in
                 guard error == nil else { return }
-                //print("Scheduling notification with id: \(notification.identifier ?? "someID")")
+                
+                completion(true)
             }
         }
     }
     
-    func run() {
+    func run(completion: @escaping (Bool) -> Void) {
         requestPermission { (granted) in
             if granted {
-                self.scheduleNotifications()
+                self.scheduleNotifications { (finished) in
+                    completion(finished)
+                }
             }
         }
     }
