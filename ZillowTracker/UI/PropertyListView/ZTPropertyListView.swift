@@ -9,13 +9,15 @@
 import UIKit
 
 class ZTPropertyListView: UIView {
-    @IBOutlet var propertyListTableView: UITableView!
+    @IBOutlet var propertyListTableView : UITableView!
+    
+    @IBOutlet var backButton : UIButton!
+    @IBOutlet var titleLabel : UILabel!
+    @IBOutlet var headerView : ZTGradientView!
     
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        let headerNib = UINib.init(nibName: "ZTPropertyListHeaderView", bundle: nil)
-        propertyListTableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "ZTPropertyListHeaderView")
+    public func fill(title: String) {
+        titleLabel.text = title
     }
 }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             

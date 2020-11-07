@@ -25,12 +25,22 @@ class ZTBackgroundTaskManager: NSObject {
         BGTaskScheduler.shared.cancel(taskRequestWithIdentifier: ZTContextConstants.backgroundTaskID)
     }
     
-    public func scheduleBackgroundSearch() {
+    public func scheduleBackgroundSearchIfNeeded() {
+        let searchSettings = ZTSearchSettings()
+        
+        if searchSettings.isBackgroundSearchOFF {
+            cancelBackgroundSearch()
+        } else {
+            scheduleBackgroundSearch()
+        }
+    }
+    
+    private func scheduleBackgroundSearch() {
         do {
             let request = BGProcessingTaskRequest(identifier:  ZTContextConstants.backgroundTaskID)
             request.requiresExternalPower = false
             request.requiresNetworkConnectivity = true
-            request.earliestBeginDate = Date().notificationDate(hrs: 7, mins: 0, secs: 0)
+            request.earliestBeginDate = Date().notificationDate(hrs: 2, mins: 0, secs: 0)
             try BGTaskScheduler.shared.submit(request)
         } catch {
             print(error)

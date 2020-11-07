@@ -20,4 +20,5 @@ enum ZTContextConstants {
                                         errorMessageKey : "Change search parameters and try again."]
     
     static let backgroundTaskID       = "com.myronovaVarvara.propertySearch"
+    static let notificationKey        = "notification"
 }

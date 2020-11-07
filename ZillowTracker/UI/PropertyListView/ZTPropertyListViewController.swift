@@ -26,42 +26,53 @@ class ZTPropertyListViewController: UIViewController, UITableViewDelegate, UIGes
             rootView.propertyListTableView.dataSource = tableViewDataSource
         }
         
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
+    }
+    
+    //MARK: - Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailViewController = segue.destination as? ZTPropertyDetailViewController
+            else {
+                return
+        }
+        
+        if let tableView = rootView?.propertyListTableView, let indexPath = tableView.indexPathForSelectedRow, let models = models
+        {
+            let model = models[indexPath.row]
+            detailViewController.house = model.model
+        }
+    }
+    
+    //MARK: - Interface Handling
+    @IBAction func onBackButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
     
     //MARK: - UITableViewDelegate
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let models = models {
-            let selectedModel = models[indexPath.row].model
-            if let propertyLink = URL.init(string: selectedModel.link) {
-                if UIApplication.shared.canOpenURL(propertyLink) {
-                    UIApplication.shared.open(propertyLink, options: [ : ], completionHandler: nil)
-                }
-            }
-            
-        }
-    }
-    
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ZTPropertyListHeaderView") as? ZTPropertyListHeaderView {
-            if let models = models, let firstModel = models.first, let address = firstModel.model.address {
-                if let neighborhood = address.neighborhood {
-                    headerView.fill(text: neighborhood)
-                } else {
-                    let zip = address.zip
-                    headerView.fill(text: zip)
-                }
-            }
-            
-            return headerView
-        }
+    func tableView(_ tableView                    : UITableView,
+                   viewForHeaderInSection section : Int) -> UIView?
+    {
+//        if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ZTPropertyListHeaderView") as? ZTPropertyListHeaderView {
+//            if let models = models,
+//               let firstModel = models.first,
+//               let address = firstModel.model.address
+//            {
+//                if let neighborhood = address.neighborhood {
+//                    headerView.fill(text: neighborhood)
+//                } else {
+//                    let zip = address.zip
+//                    headerView.fill(text: zip)
+//                }
+//            }
+//
+//            return headerView
+//        }
         
         return nil
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50.0
+        return 0.01
     }
     
     //MARK: - UIGestureRecognizerDelegate

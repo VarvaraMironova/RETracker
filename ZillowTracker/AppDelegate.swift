@@ -7,27 +7,24 @@
 //
 
 import UIKit
-import ZTModels
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        //clean defaults
-        #warning("remove if not needed!")
-        //UserDefaults.standard.set(nil, forKey: "searchSettings")
+    func application(_                              application: UIApplication,
+                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
+    {
+        
         let backgroundTaskManager = ZTBackgroundTaskManager()
-        //backgroundTaskManager.cancelBackgroundSearch()
         backgroundTaskManager.registerBackgroundSearch()
         
         return true
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
-        let backgroundTaskManager = ZTBackgroundTaskManager()
-        backgroundTaskManager.scheduleBackgroundSearch()
+        ZTBackgroundTaskManager().scheduleBackgroundSearchIfNeeded()
     }
 
 }

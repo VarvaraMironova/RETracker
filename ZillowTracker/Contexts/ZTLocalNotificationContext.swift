@@ -37,7 +37,7 @@ class ZTLocalNotificationContext: NSObject {
             let encoder = JSONEncoder()
             
             if let data = try? encoder.encode(notification) {
-                content.userInfo = ["notification" : data]
+                content.userInfo = [ZTContextConstants.notificationKey : data]
             }
             
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)

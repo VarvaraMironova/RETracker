@@ -11,7 +11,7 @@ import ZTModels
 
 class ZTSetupSearchView: UIView {
     @IBOutlet var titleLabel          : UILabel!
-    @IBOutlet var zipLabel            : UILabel!
+    @IBOutlet var zipTitleLabel       : UILabel!
     @IBOutlet var performSearchButton : UIButton!
     @IBOutlet var zipPickerView       : UIPickerView!
     @IBOutlet var priceSlider         : UISlider!
@@ -19,41 +19,73 @@ class ZTSetupSearchView: UIView {
     @IBOutlet var minPriceLabel       : UILabel!
     @IBOutlet var maxPriceLabel       : UILabel!
     @IBOutlet var loadingContainer    : UIView!
+    @IBOutlet var activityIndicator   : UIActivityIndicatorView!
     
-    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var backgroundSearchSwitch     : UISwitch!
+    @IBOutlet var backgroundSearchLabel      : UILabel!
+    @IBOutlet var apiTypeSegmentControl      : UISegmentedControl!
+    @IBOutlet var propertyTypeSegmentControl : UISegmentedControl!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        //setup slider
-        priceSlider.maximumValue = Float(ZTUIConstants.maxPrice)
-        priceSlider.minimumValue = Float(ZTUIConstants.minPrice)
+        let settings = ZTSearchSettings()
         
-        //setup labels
-        minPriceLabel.text = ZTUIConstants.minPrice.formattedWithSeparator
-        maxPriceLabel.text = ZTUIConstants.defaultPrice.formattedWithSeparator
-    }
-    
-    func setupFromSettings(settings: ZTSearchSettings) {
-        if let index = ZTUIConstants.zips.firstIndex(of: settings.zip) {
-            zipPickerView.selectRow(index, inComponent: 0, animated: false)
+        //setup slider and labels
+        //priceSlider.setThumbImage(UIImage(named: "dollarIcon"), for: .normal)
+        updatePriceSlider(settings: settings)
+        
+        //setup segment controls
+        apiTypeSegmentControl.selectedSegmentIndex = settings.apiType == .forSale ? 0 : 1
+        let key = NSAttributedString.Key.foregroundColor
+        
+        if let lightTextColor = UIColor(named: "color_textLight") {
+            apiTypeSegmentControl.setTitleTextAttributes([key: lightTextColor], for: .selected)
+            propertyTypeSegmentControl.setTitleTextAttributes([key: lightTextColor], for: .selected)
         }
         
-        priceSlider.value = Float(settings.maxPrice)
+        if let darkTextColor = UIColor(named: "color_textDark") {
+            apiTypeSegmentControl.setTitleTextAttributes([key: darkTextColor], for: .normal)
+            propertyTypeSegmentControl.setTitleTextAttributes([key: darkTextColor], for: .normal)
+        }
+        
+        switch settings.propertyType {
+        case .realEstate:
+            propertyTypeSegmentControl.selectedSegmentIndex = 0
+            break
+        case .land:
+            propertyTypeSegmentControl.selectedSegmentIndex = 1
+            break
+        default:
+            propertyTypeSegmentControl.selectedSegmentIndex = 2
+            break
+        }
+    }
+    
+    func updatePriceSlider(settings: ZTSearchSettings) {
+        maxPriceLabel.fadeTransition(0.36)
         maxPriceLabel.text = settings.maxPrice.formattedWithSeparator
+        priceSlider.maximumValue = Float(settings.maxPriceRange)
+        priceSlider.value = Float(settings.maxPrice)
+    }
+    
+    func updateZipPicker(settings: ZTSearchSettings) {
+        if let index = settings.zips.firstIndex(of: settings.zip) {
+            zipPickerView.selectRow(index,
+                                    inComponent: 0,
+                                    animated: false)
+        }
     }
     
     func updateSubviewsWhileLoading(loadingFinished: Bool) {
         DispatchQueue.main.async { [unowned self] in
             if loadingFinished {
                 self.activityIndicator.stopAnimating()
-                self.loadingContainer.isHidden = true
-                self.performSearchButton.alpha = 1.0
             } else {
                 self.activityIndicator.startAnimating()
-                self.loadingContainer.isHidden = false
-                self.performSearchButton.alpha = 0.3
             }
+            
+            self.loadingContainer.isHidden = loadingFinished
         }
     }
     

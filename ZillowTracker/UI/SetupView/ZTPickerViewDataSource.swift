@@ -11,6 +11,13 @@ import UIKit
 import ZTModels
 
 class ZTPickerViewDataSource: NSObject, UIPickerViewDataSource {
+    var zips : [String]?
+    
+    init(zips: [String]) {
+        super.init()
+        
+        self.zips = zips
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -19,6 +26,10 @@ class ZTPickerViewDataSource: NSObject, UIPickerViewDataSource {
     func pickerView(_ pickerView                        : UIPickerView,
                     numberOfRowsInComponent component   : Int) -> Int
     {
-        return ZTUIConstants.zips.count
+        if let zips = zips {
+            return zips.count
+        } else {
+            return 0
+        }
     }
 }

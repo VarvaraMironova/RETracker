@@ -11,6 +11,7 @@
 		D77CA48824C4E6C8004554E1 /* AdjustableVisualEffectViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77CA48724C4E6C8004554E1 /* AdjustableVisualEffectViewTests.swift */; };
 		D77CA48A24C4E6C8004554E1 /* AdjustableVisualEffectView.h in Headers */ = {isa = PBXBuildFile; fileRef = D77CA47C24C4E6C8004554E1 /* AdjustableVisualEffectView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D77CA49424C4E70B004554E1 /* AdjustableVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77CA49324C4E70B004554E1 /* AdjustableVisualEffectView.swift */; };
+		D7EFDA4F254A1C0300967C96 /* AdjustableVisualEffectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7EFDA4E254A1C0300967C96 /* AdjustableVisualEffectView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		D77CA48724C4E6C8004554E1 /* AdjustableVisualEffectViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustableVisualEffectViewTests.swift; sourceTree = "<group>"; };
 		D77CA48924C4E6C8004554E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D77CA49324C4E70B004554E1 /* AdjustableVisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjustableVisualEffectView.swift; sourceTree = "<group>"; };
+		D7EFDA4E254A1C0300967C96 /* AdjustableVisualEffectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdjustableVisualEffectView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				D77CA49324C4E70B004554E1 /* AdjustableVisualEffectView.swift */,
+				D7EFDA4E254A1C0300967C96 /* AdjustableVisualEffectView.xib */,
 				D77CA47C24C4E6C8004554E1 /* AdjustableVisualEffectView.h */,
 				D77CA47D24C4E6C8004554E1 /* Info.plist */,
 			);
@@ -146,7 +149,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Varvara Myronova";
 				TargetAttributes = {
 					D77CA47824C4E6C8004554E1 = {
@@ -182,6 +185,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7EFDA4F254A1C0300967C96 /* AdjustableVisualEffectView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +253,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -313,6 +318,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

@@ -10,6 +10,7 @@ import UIKit
 import ZTModels
 
 class ZTSetupSearchViewController: UIViewController, UIPickerViewDelegate {
+    
     //MARK: - variables & constants
     weak private var rootView: ZTSetupSearchView? {
         return viewIfLoaded as? ZTSetupSearchView
@@ -20,19 +21,21 @@ class ZTSetupSearchViewController: UIViewController, UIPickerViewDelegate {
     var pickerViewDataSource : ZTPickerViewDataSource?
     
     private var searchContext  : ZTSearchPropertiesContext?
-    private var searchSettings = ZTSearchSettings()
+    private lazy var searchSettings = {
+        return ZTSearchSettings()
+    }()
     
     //MARK: - View Life Cicle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let rootView = rootView {
-            let pickerViewDataSource = ZTPickerViewDataSource()
+            let pickerViewDataSource = ZTPickerViewDataSource(zips: searchSettings.zips)
             rootView.zipPickerView.dataSource = pickerViewDataSource
             
             self.pickerViewDataSource = pickerViewDataSource
             
-            rootView.setupFromSettings(settings: searchSettings)
+            rootView.updateZipPicker(settings: searchSettings)
         }
     }
     
@@ -46,7 +49,7 @@ class ZTSetupSearchViewController: UIViewController, UIPickerViewDelegate {
         listViewController.models = propertyList
     }
     
-    //MARK: - interface Handlers
+    //MARK: - Interface Handlers
     @IBAction func onPerformSearchButton(_ sender: Any) {
         if let searchContext = searchContext {
             switch searchContext.state {
@@ -68,19 +71,68 @@ class ZTSetupSearchViewController: UIViewController, UIPickerViewDelegate {
         }
     }
     
+    @IBAction func onAPITypeSegmentSegmentControl(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            //"For Sale API" is choosen
+            searchSettings.apiType = .forSale
+            break
+        case 1:
+            //"For Rent API" is choosen
+            searchSettings.apiType = .forRent
+            break
+        default:
+            break
+        }
+        
+        if let rootView = rootView {
+            rootView.updatePriceSlider(settings: searchSettings)
+        }
+    }
+    
+    @IBAction func onPropertyTypeSegmentControl(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            //.single_family, .condo, .multi_family, .mobile
+            searchSettings.propertyType = .realEstate
+            break
+            
+        case 1:
+            //.land
+            searchSettings.propertyType = .land
+            break
+        case 2:
+            //all options are choosen
+            searchSettings.propertyType = .all
+            break
+        default:
+            break
+        }
+    }
+    
+    @IBAction func onBackgroundSwitch(_ sender: UISwitch) {
+        searchSettings.isBackgroundSearchOFF = !sender.isOn
+    }
+    
     //MARK: - UIPickerViewDelegate
     func pickerView(_ pickerView            : UIPickerView,
                     didSelectRow row        : Int,
                     inComponent component   : Int)
     {
-        searchSettings.zip = ZTUIConstants.zips[row]
+        searchSettings.zip = searchSettings.zips[row]
     }
     
-    func pickerView(_ pickerView            : UIPickerView,
-                    titleForRow row         : Int,
-                    forComponent component  : Int) -> String?
+    func pickerView(_ pickerView              : UIPickerView,
+                    attributedTitleForRow row : Int,
+                    forComponent component    : Int) -> NSAttributedString?
     {
-        return ZTUIConstants.zips[row]
+        let title = searchSettings.zips[row]
+        let key = NSAttributedString.Key.foregroundColor
+        let textColor = UIColor(red: 47/255.0, green: 45/255.0, blue: 44/255.0, alpha: 1.0)
+        let attributedTitle = NSAttributedString(string    : title,
+                                                 attributes: [key: textColor])
+        
+        return attributedTitle
     }
     
     //MARK: - Private
@@ -115,7 +167,8 @@ class ZTSetupSearchViewController: UIViewController, UIPickerViewDelegate {
         
                     DispatchQueue.main.async {[weak self] in
                         guard let strongSelf = self else { return }
-                        strongSelf.performSegue(withIdentifier: ZTUIConstants.ZTShowPropertyListSegueId, sender: strongSelf)
+                        strongSelf.performSegue(withIdentifier : ZTUIConstants.showPropertyListSegueId,
+                                                sender         : strongSelf)
                     }
                 }
                 

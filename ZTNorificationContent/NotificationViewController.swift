@@ -24,7 +24,9 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
         if let notificationData = userInfo["notification"] as? Data {
             let decoder = JSONDecoder()
 
-            if let notification = try? decoder.decode(ZTNotification.self, from: notificationData), let rootView = rootView {
+            if let notification = try? decoder.decode(ZTNotification.self, from: notificationData),
+               let rootView = rootView
+            {
                 rootView.fill(notification: notification)
             }
         }
