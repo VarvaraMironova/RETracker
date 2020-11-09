@@ -38,7 +38,6 @@ class ZTPropertyDetailCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         imageModel?.suspendLoading()
-        previewImageView.image = nil
         hideLoadingView()
 
         super.prepareForReuse()
