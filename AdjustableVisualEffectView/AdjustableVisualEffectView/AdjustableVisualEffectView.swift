@@ -118,7 +118,7 @@ enum AVStringAlignment: String {
         }
     }
     
-    fileprivate var _textColor          : UIColor = UIColor.black
+    fileprivate var _textColor          : UIColor = UIColor(named: "color_textLight")!
     @IBInspectable public var textColor : UIColor {
         set {
             if newValue != _textColor {

@@ -24,6 +24,18 @@ class ZTPropertyListViewController: UIViewController, UITableViewDelegate, UIGes
         if let models = models, let rootView = rootView {
             tableViewDataSource = ZTTableViewDataSource(models: models)
             rootView.propertyListTableView.dataSource = tableViewDataSource
+            
+            if let firstModel = models.first,
+               let address = firstModel.model.address
+            {
+                if let neighborhood = address.neighborhood {
+                    rootView.fill(title: neighborhood)
+                } else {
+                    if let zip = address.zip {
+                        rootView.fill(title: zip)
+                    }
+                }
+            }
         }
         
         navigationController?.interactivePopGestureRecognizer?.delegate = self
@@ -49,28 +61,6 @@ class ZTPropertyListViewController: UIViewController, UITableViewDelegate, UIGes
     }
     
     //MARK: - UITableViewDelegate
-    func tableView(_ tableView                    : UITableView,
-                   viewForHeaderInSection section : Int) -> UIView?
-    {
-//        if let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ZTPropertyListHeaderView") as? ZTPropertyListHeaderView {
-//            if let models = models,
-//               let firstModel = models.first,
-//               let address = firstModel.model.address
-//            {
-//                if let neighborhood = address.neighborhood {
-//                    headerView.fill(text: neighborhood)
-//                } else {
-//                    let zip = address.zip
-//                    headerView.fill(text: zip)
-//                }
-//            }
-//
-//            return headerView
-//        }
-        
-        return nil
-    }
-    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.01
     }
