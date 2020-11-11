@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZTPropertyFeatureView" customModule="RE_Tracker" customModuleProvider="target">
+            <connections>
+                <outlet property="blurBackgroundView" destination="XzC-YG-7EZ" id="4oN-yf-nmh"/>
+                <outlet property="featureTitleLabel" destination="bZs-2P-5iP" id="sh4-I1-rpH"/>
+                <outlet property="featureValueLabel" destination="gzO-lU-dgc" id="qp1-Jf-eE0"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="Content View">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XzC-YG-7EZ" customClass="AdjustableVisualEffectView" customModule="AdjustableVisualEffectView">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="intensity">
+                            <real key="value" value="0.59999999999999998"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZs-2P-5iP">
+                    <rect key="frame" x="22" y="16" width="174" height="18"/>
+                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="18"/>
+                    <color key="textColor" name="color_textDark"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="gzO-lU-dgc">
+                    <rect key="frame" x="218" y="16" width="174" height="18"/>
+                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="18"/>
+                    <color key="textColor" name="color_textDark"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="bZs-2P-5iP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="22" id="4VG-Tp-MhE"/>
+                <constraint firstItem="XzC-YG-7EZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KcA-4Q-GSR"/>
+                <constraint firstItem="gzO-lU-dgc" firstAttribute="leading" secondItem="bZs-2P-5iP" secondAttribute="trailing" constant="22" id="MBi-th-4L8"/>
+                <constraint firstItem="gzO-lU-dgc" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="djd-BR-Uhq"/>
+                <constraint firstItem="gzO-lU-dgc" firstAttribute="width" secondItem="bZs-2P-5iP" secondAttribute="width" id="e6B-lf-vBB"/>
+                <constraint firstItem="bZs-2P-5iP" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="mE6-I1-bXx"/>
+                <constraint firstItem="XzC-YG-7EZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nhM-L5-ZT6"/>
+                <constraint firstAttribute="bottom" secondItem="XzC-YG-7EZ" secondAttribute="bottom" id="tDM-yz-Lqj"/>
+                <constraint firstItem="XzC-YG-7EZ" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="vev-1J-ZfW"/>
+                <constraint firstAttribute="trailing" secondItem="gzO-lU-dgc" secondAttribute="trailing" constant="22" id="yca-jJ-eKx"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="101" y="62"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="color_textDark">
+            <color red="0.18431372549019609" green="0.17647058823529413" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
