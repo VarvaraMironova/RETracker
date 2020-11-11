@@ -9,6 +9,26 @@
 import UIKit
 import ZTModels
 
+extension UIViewController {
+    func showAlert(error: NSError) {
+        DispatchQueue.main.async {[unowned self] in
+            let continueAction = UIAlertAction(title   : "Continue",
+                                               style   : .cancel,
+                                               handler : nil)
+            let title = error.userInfo[ZTUIConstants.errorTitleKey] as? String
+            let message = error.userInfo[ZTUIConstants.errorMessageKey] as? String
+            let alertcontroller = UIAlertController(title          : title,
+                                                    message        : message,
+                                                    preferredStyle : .alert)
+            alertcontroller.addAction(continueAction)
+            
+            self.present(alertcontroller,
+                         animated   : true,
+                         completion : nil)
+        }
+    }
+}
+
 class ZTSetupSearchViewController: UIViewController, UIPickerViewDelegate {
     
     //MARK: - variables & constants
@@ -126,36 +146,23 @@ class ZTSetupSearchViewController: UIViewController, UIPickerViewDelegate {
                     attributedTitleForRow row : Int,
                     forComponent component    : Int) -> NSAttributedString?
     {
-        let title = searchSettings.zips[row]
-        let key = NSAttributedString.Key.foregroundColor
-        let textColor = UIColor(red: 47/255.0, green: 45/255.0, blue: 44/255.0, alpha: 1.0)
-        let attributedTitle = NSAttributedString(string    : title,
+        var attributedTitle = NSAttributedString()
+        
+        if let textColor = UIColor(named: "color_textDark") {
+            let title = searchSettings.zips[row]
+            let key = NSAttributedString.Key.foregroundColor
+            attributedTitle = NSAttributedString(string    : title,
                                                  attributes: [key: textColor])
+        }
         
         return attributedTitle
     }
     
     //MARK: - Private
-    private func showAlert(error: NSError) {
-        let continueAction = UIAlertAction.init(title: "Continue",
-                                                style: .cancel,
-                                                handler: nil)
-        let title = error.userInfo[ZTUIConstants.errorTitleKey] as? String
-        let message = error.userInfo[ZTUIConstants.errorMessageKey] as? String
-        let alertcontroller = UIAlertController.init(title: title,
-                                                     message: message,
-                                                     preferredStyle: .alert)
-        alertcontroller.addAction(continueAction)
-        
-        self.present(alertcontroller,
-                     animated: true,
-                     completion: nil)
-    }
-    
     private func performSearch() {
         if let rootView = rootView {
-            let searchContext = ZTSearchPropertiesContext.init(searchSettings: searchSettings)
             searchSettings.save()
+            let searchContext = ZTSearchPropertiesContext()
             
             rootView.updateSubviewsWhileLoading(loadingFinished: false)
             

@@ -65,7 +65,8 @@ class ZTSetupSearchView: UIView {
     func updatePriceSlider(settings: ZTSearchSettings) {
         maxPriceLabel.fadeTransition(0.36)
         maxPriceLabel.text = settings.maxPrice.formattedWithSeparator
-        priceSlider.maximumValue = Float(settings.maxPriceRange)
+        let maxPriceRange = settings.maxPriceRange
+        priceSlider.maximumValue = Float(maxPriceRange)
         priceSlider.value = Float(settings.maxPrice)
     }
     

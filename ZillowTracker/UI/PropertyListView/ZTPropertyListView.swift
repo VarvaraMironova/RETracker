@@ -15,6 +15,12 @@ class ZTPropertyListView: UIView {
     @IBOutlet var titleLabel : UILabel!
     @IBOutlet var headerView : ZTGradientView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        //prevent UITableView scrrolling when the content fits on the screen
+        propertyListTableView.alwaysBounceVertical = false
+    }
     
     public func fill(title: String) {
         titleLabel.text = title

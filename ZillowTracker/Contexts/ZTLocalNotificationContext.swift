@@ -9,6 +9,7 @@
 import UIKit
 import UserNotifications
 import ZTModels
+import FirebaseCrashlytics
 
 class ZTLocalNotificationContext: NSObject {
     private var notifications = [ZTNotification]()
@@ -32,7 +33,7 @@ class ZTLocalNotificationContext: NSObject {
             let content = UNMutableNotificationContent()
             content.categoryIdentifier = notification.category
             content.title = notification.title
-            let soundName = UNNotificationSoundName.init(notification.soundName)
+            let soundName = UNNotificationSoundName(notification.soundName)
             content.sound = UNNotificationSound(named: soundName)
             let encoder = JSONEncoder()
             
@@ -41,10 +42,17 @@ class ZTLocalNotificationContext: NSObject {
             }
             
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)
-            let request = UNNotificationRequest(identifier: notification.identifier, content: content, trigger: trigger)
+            let request = UNNotificationRequest(identifier : notification.identifier,
+                                                content    : content,
+                                                trigger    : trigger)
             
             UNUserNotificationCenter.current().add(request) { error in
-                guard error == nil else { return }
+                guard error == nil
+                else {
+                    Crashlytics.crashlytics().setCustomValue("Scheduling notifications error",
+                                                             forKey: "notifications_error")
+                    return
+                }
                 
                 completion(true)
             }

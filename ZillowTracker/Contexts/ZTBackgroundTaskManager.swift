@@ -9,6 +9,8 @@
 import UIKit
 import BackgroundTasks
 import ZTModels
+import FirebaseCrashlytics
+import FirebaseAnalytics
 
 class ZTBackgroundTaskManager: NSObject {
     
@@ -43,13 +45,12 @@ class ZTBackgroundTaskManager: NSObject {
             request.earliestBeginDate = Date().notificationDate(hrs: 2, mins: 0, secs: 0)
             try BGTaskScheduler.shared.submit(request)
         } catch {
-            print(error)
+            Crashlytics.crashlytics().setCustomValue("Scheduling a background task error", forKey: "bgTask_error")
         }
     }
     
     private func performBackgroundSearch(task: BGTask) {
-        let searchSettings = ZTSearchSettings()
-        let searchContext = ZTSearchPropertiesContext(searchSettings: searchSettings)
+        let searchContext = ZTSearchPropertiesContext()
         
         task.expirationHandler = {
             task.setTaskCompleted(success: false)
@@ -59,14 +60,26 @@ class ZTBackgroundTaskManager: NSObject {
         searchContext.perform { (propertyList, error) in
             //schedule notifications
             if let propertyList = propertyList {
-                let notificationContext = ZTLocalNotificationContext.init(properties: propertyList)
+                let notificationContext = ZTLocalNotificationContext(properties: propertyList)
                 notificationContext.run { (finished) in
                     if finished {
                         task.setTaskCompleted(success: true)
+                        
+                        self.scheduleBackgroundSearch()
                     }
                 }
             } else {
                 task.setTaskCompleted(success: false)
+                let settings = ZTSearchSettings()
+                let parameters = [
+                    AnalyticsParameterItemID      : "id-noPropertiesFound",
+                    AnalyticsParameterItemName    : "noPropertiesFound",
+                    "settings"                    : settings.description
+                ]
+                
+                Analytics.logEvent(AnalyticsEventSelectContent,
+                                   parameters: parameters)
+                self.scheduleBackgroundSearch()
             }
         }
         

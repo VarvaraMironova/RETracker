@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		283A00A601EF04840EED5F0C /* Pods_ZillowTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CFAE808083A49866C1BA1BB /* Pods_ZillowTracker.framework */; };
+		40E49CF205448ED390F00FD5 /* Pods_ZTNorificationContent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9359E7FB061A6A2DFD7F248 /* Pods_ZTNorificationContent.framework */; };
+		B98972DE6F24BA97CF877C4A /* Pods_ZTNotificationService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B754368B559638958BBC345 /* Pods_ZTNotificationService.framework */; };
 		D72637A0249070BC00CF11DE /* ZTStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726379F249070BC00CF11DE /* ZTStringExtension.swift */; };
 		D74AAB8624B5520B00996F1A /* ZTDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74AAB8524B5520B00996F1A /* ZTDateExtension.swift */; };
 		D74ADE4224CA59EC00C127A3 /* ZTPropertyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74ADE4124CA59EC00C127A3 /* ZTPropertyDetailViewController.swift */; };
@@ -61,6 +64,7 @@
 		D7E97ED42547275C00381F33 /* VMPagingFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E97ED32547275C00381F33 /* VMPagingFlowLayout.swift */; };
 		D7E97ED8254883DF00381F33 /* ZTPropertyFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E97ED7254883DF00381F33 /* ZTPropertyFeatureView.swift */; };
 		D7E97EE22548891600381F33 /* ZTPropertyFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E97EE12548891600381F33 /* ZTPropertyFeatureView.xib */; };
+		ECD46DDC40C686C447F98F12 /* Pods_ZillowTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C476096924B3C4BB6A3EBF /* Pods_ZillowTrackerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +158,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2A8D190803BA0D7589A06AC9 /* Pods-ZTNotificationService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZTNotificationService.debug.xcconfig"; path = "Target Support Files/Pods-ZTNotificationService/Pods-ZTNotificationService.debug.xcconfig"; sourceTree = "<group>"; };
+		31604A686BE5EB968D650E9A /* Pods-ZTNorificationContent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZTNorificationContent.release.xcconfig"; path = "Target Support Files/Pods-ZTNorificationContent/Pods-ZTNorificationContent.release.xcconfig"; sourceTree = "<group>"; };
+		4479C24490D4548477C5958D /* Pods-ZillowTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillowTrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-ZillowTrackerTests/Pods-ZillowTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		49A477A2587CB58B9E324CFA /* Pods-ZillowTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillowTrackerTests.release.xcconfig"; path = "Target Support Files/Pods-ZillowTrackerTests/Pods-ZillowTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
+		7B754368B559638958BBC345 /* Pods_ZTNotificationService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZTNotificationService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CFAE808083A49866C1BA1BB /* Pods_ZillowTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZillowTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DE5263B02054C071962A2E5 /* Pods-ZillowTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillowTracker.debug.xcconfig"; path = "Target Support Files/Pods-ZillowTracker/Pods-ZillowTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		C42702B9D9BA13727E45260D /* Pods-ZTNotificationService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZTNotificationService.release.xcconfig"; path = "Target Support Files/Pods-ZTNotificationService/Pods-ZTNotificationService.release.xcconfig"; sourceTree = "<group>"; };
+		D2759433FAD5DACD4F726107 /* Pods-ZillowTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillowTracker.release.xcconfig"; path = "Target Support Files/Pods-ZillowTracker/Pods-ZillowTracker.release.xcconfig"; sourceTree = "<group>"; };
+		D6C408E97341CDB3CFE2E353 /* Pods-ZTNorificationContent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZTNorificationContent.debug.xcconfig"; path = "Target Support Files/Pods-ZTNorificationContent/Pods-ZTNorificationContent.debug.xcconfig"; sourceTree = "<group>"; };
 		D726379F249070BC00CF11DE /* ZTStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTStringExtension.swift; sourceTree = "<group>"; };
 		D74AAB8524B5520B00996F1A /* ZTDateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTDateExtension.swift; sourceTree = "<group>"; };
 		D74ADE4124CA59EC00C127A3 /* ZTPropertyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTPropertyDetailViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +222,8 @@
 		D7E97ED32547275C00381F33 /* VMPagingFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMPagingFlowLayout.swift; sourceTree = "<group>"; };
 		D7E97ED7254883DF00381F33 /* ZTPropertyFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTPropertyFeatureView.swift; sourceTree = "<group>"; };
 		D7E97EE12548891600381F33 /* ZTPropertyFeatureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZTPropertyFeatureView.xib; sourceTree = "<group>"; };
+		D9359E7FB061A6A2DFD7F248 /* Pods_ZTNorificationContent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZTNorificationContent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4C476096924B3C4BB6A3EBF /* Pods_ZillowTrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZillowTrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +235,7 @@
 				D77CA42824C24777004554E1 /* ZTModels.framework in Frameworks */,
 				D75139EC24BD1EB100CF35BE /* UserNotifications.framework in Frameworks */,
 				D77CA4A024C4E7B1004554E1 /* AdjustableVisualEffectView.framework in Frameworks */,
+				40E49CF205448ED390F00FD5 /* Pods_ZTNorificationContent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +243,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B98972DE6F24BA97CF877C4A /* Pods_ZTNotificationService.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +254,7 @@
 				D77CA45B24C279BA004554E1 /* UserNotifications.framework in Frameworks */,
 				D77CA42424C24757004554E1 /* ZTModels.framework in Frameworks */,
 				D77CA49E24C4E7AA004554E1 /* AdjustableVisualEffectView.framework in Frameworks */,
+				283A00A601EF04840EED5F0C /* Pods_ZillowTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +262,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECD46DDC40C686C447F98F12 /* Pods_ZillowTrackerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +415,7 @@
 				D77CA49524C4E796004554E1 /* AdjustableVisualEffectView.xcodeproj */,
 				D77CA41824C24681004554E1 /* ZTModels.xcodeproj */,
 				D7A5DB132485D89F00BE7BC8 /* Frameworks */,
+				EE04BB89314BBD1D24F903B1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -450,6 +471,10 @@
 			children = (
 				D75139D524BD1E4A00CF35BE /* UserNotifications.framework */,
 				D75139D724BD1E4A00CF35BE /* UserNotificationsUI.framework */,
+				D9359E7FB061A6A2DFD7F248 /* Pods_ZTNorificationContent.framework */,
+				7B754368B559638958BBC345 /* Pods_ZTNotificationService.framework */,
+				7CFAE808083A49866C1BA1BB /* Pods_ZillowTracker.framework */,
+				F4C476096924B3C4BB6A3EBF /* Pods_ZillowTrackerTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -479,6 +504,21 @@
 			path = PropertyFeatureView;
 			sourceTree = "<group>";
 		};
+		EE04BB89314BBD1D24F903B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D6C408E97341CDB3CFE2E353 /* Pods-ZTNorificationContent.debug.xcconfig */,
+				31604A686BE5EB968D650E9A /* Pods-ZTNorificationContent.release.xcconfig */,
+				2A8D190803BA0D7589A06AC9 /* Pods-ZTNotificationService.debug.xcconfig */,
+				C42702B9D9BA13727E45260D /* Pods-ZTNotificationService.release.xcconfig */,
+				9DE5263B02054C071962A2E5 /* Pods-ZillowTracker.debug.xcconfig */,
+				D2759433FAD5DACD4F726107 /* Pods-ZillowTracker.release.xcconfig */,
+				4479C24490D4548477C5958D /* Pods-ZillowTrackerTests.debug.xcconfig */,
+				49A477A2587CB58B9E324CFA /* Pods-ZillowTrackerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -486,6 +526,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D75139F824BD1EB100CF35BE /* Build configuration list for PBXNativeTarget "ZTNorificationContent" */;
 			buildPhases = (
+				B2BEE4E811A35A95FF23BAAC /* [CP] Check Pods Manifest.lock */,
 				D75139E724BD1EB100CF35BE /* Sources */,
 				D75139E824BD1EB100CF35BE /* Frameworks */,
 				D75139E924BD1EB100CF35BE /* Resources */,
@@ -504,6 +545,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D7513A0724BD1EC800CF35BE /* Build configuration list for PBXNativeTarget "ZTNotificationService" */;
 			buildPhases = (
+				D5AFC9F4B24184D75163EDF0 /* [CP] Check Pods Manifest.lock */,
 				D75139FB24BD1EC800CF35BE /* Sources */,
 				D75139FC24BD1EC800CF35BE /* Frameworks */,
 				D75139FD24BD1EC800CF35BE /* Resources */,
@@ -521,12 +563,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D79A379124803407005899BF /* Build configuration list for PBXNativeTarget "ZillowTracker" */;
 			buildPhases = (
+				390C541512A4B277583B51FA /* [CP] Check Pods Manifest.lock */,
 				D79A376E24803403005899BF /* Sources */,
 				D79A376F24803403005899BF /* Frameworks */,
 				D79A377024803403005899BF /* Resources */,
 				D7A5DB172485D89F00BE7BC8 /* Embed Frameworks */,
 				D7A5DB182485D8E900BE7BC8 /* ShellScript */,
 				D75139E624BD1E4A00CF35BE /* Embed App Extensions */,
+				EC2ECEAC755C6BF6C9BB2B10 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -543,6 +587,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D79A379424803407005899BF /* Build configuration list for PBXNativeTarget "ZillowTrackerTests" */;
 			buildPhases = (
+				06A2A6CE24C79DD89A9AAE8D /* [CP] Check Pods Manifest.lock */,
 				D79A378424803407005899BF /* Sources */,
 				D79A378524803407005899BF /* Frameworks */,
 				D79A378624803407005899BF /* Resources */,
@@ -687,6 +732,94 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		06A2A6CE24C79DD89A9AAE8D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZillowTrackerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		390C541512A4B277583B51FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZillowTracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2BEE4E811A35A95FF23BAAC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZTNorificationContent-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5AFC9F4B24184D75163EDF0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZTNotificationService-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D7A5DB182485D8E900BE7BC8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
@@ -695,13 +828,33 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"",
+				"$(SRCROOT)/${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${ZillowTracker}",
 			);
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = "${PODS_ROOT}/FirebaseCrashlytics/run";
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+		EC2ECEAC755C6BF6C9BB2B10 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZillowTracker/Pods-ZillowTracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZillowTracker/Pods-ZillowTracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZillowTracker/Pods-ZillowTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -816,6 +969,7 @@
 /* Begin XCBuildConfiguration section */
 		D75139F924BD1EB100CF35BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6C408E97341CDB3CFE2E353 /* Pods-ZTNorificationContent.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_STYLE = Automatic;
@@ -838,6 +992,7 @@
 		};
 		D75139FA24BD1EB100CF35BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31604A686BE5EB968D650E9A /* Pods-ZTNorificationContent.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_STYLE = Automatic;
@@ -860,6 +1015,7 @@
 		};
 		D7513A0824BD1EC800CF35BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A8D190803BA0D7589A06AC9 /* Pods-ZTNotificationService.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ZTNotificationService/ZTNotificationService.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -882,6 +1038,7 @@
 		};
 		D7513A0924BD1EC800CF35BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C42702B9D9BA13727E45260D /* Pods-ZTNotificationService.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ZTNotificationService/ZTNotificationService.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1022,6 +1179,7 @@
 		};
 		D79A379224803407005899BF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DE5263B02054C071962A2E5 /* Pods-ZillowTracker.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1046,6 +1204,7 @@
 		};
 		D79A379324803407005899BF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2759433FAD5DACD4F726107 /* Pods-ZillowTracker.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1070,6 +1229,7 @@
 		};
 		D79A379524803407005899BF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4479C24490D4548477C5958D /* Pods-ZillowTrackerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1092,6 +1252,7 @@
 		};
 		D79A379624803407005899BF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49A477A2587CB58B9E324CFA /* Pods-ZillowTrackerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

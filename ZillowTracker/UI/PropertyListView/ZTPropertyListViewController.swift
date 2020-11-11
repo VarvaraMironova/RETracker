@@ -22,7 +22,7 @@ class ZTPropertyListViewController: UIViewController, UITableViewDelegate, UIGes
         super.viewDidLoad()
         
         if let models = models, let rootView = rootView {
-            tableViewDataSource = ZTTableViewDataSource.init(models: models)
+            tableViewDataSource = ZTTableViewDataSource(models: models)
             rootView.propertyListTableView.dataSource = tableViewDataSource
         }
         

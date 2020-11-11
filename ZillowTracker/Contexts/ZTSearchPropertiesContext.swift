@@ -20,50 +20,52 @@ extension ZTSearchPropertiesContext {
 }
 
 class ZTSearchPropertiesContext: NSObject {
-    var searchSettings : ZTSearchSettings?
-    var state          : ZTSearchPropertiesContextState = .created
+    lazy var searchSettings : ZTSearchSettings = {
+        return ZTSearchSettings()
+    }()
+    
+    var state : ZTSearchPropertiesContextState = .created
     
     private var client : ZTClient?
     
-    init(searchSettings: ZTSearchSettings) {
-        self.searchSettings = searchSettings
-    }
-    
+    //MARK:- Public
     public func perform(completion: @escaping ([ZTEvaluatedModel]?, NSError?) -> Void) {
-        if let searchSettings = searchSettings {
-            let client = ZTClient()
-            state = .searching
-            
-            client.performSearch(searchSettings: searchSettings) { (property, error) in
-                if let error = error {
-                    completion(nil, error)
-                    self.state = .failed
-                    
-                    return
-                }
+        let client = ZTClient()
+        state = .searching
+        
+        client.performSearch(searchSettings: searchSettings) { (property, error) in
+            if let error = error {
+                completion(nil, error)
+                self.state = .failed
+                self.client = nil
                 
-                var result = nil as [ZTEvaluatedModel]?
-                
-                if let property = property {
-                    result = property.evaluate()
-                }
-                
-                if let result = result, result.count > 0 {
-                    self.state = .finished
-                    
-                    completion(result, nil)
-                } else {
-                    let error = NSError.init(domain   : ZTContextConstants.errorDomain ?? ZTContextConstants.errorDomain_undefined,
-                                             code     : ZTContextConstants.noResultsErrorCode,
-                                             userInfo : ZTContextConstants.noResultsErrorUserInfo)
-                    self.state = .failed
-                    
-                    completion(nil, error)
-                }
+                return
             }
             
-            self.client = client
+            var result = nil as [ZTEvaluatedModel]?
+            
+            if let property = property {
+                result = property.evaluate()
+            }
+            
+            if let result = result, result.count > 0 {
+                self.state = .finished
+                
+                completion(result, nil)
+            } else {
+                let domain = ZTContextConstants.errorDomain ?? ZTContextConstants.errorDomain_undefined
+                let error = NSError(domain   : domain,
+                                    code     : ZTContextConstants.noResultsErrorCode,
+                                    userInfo : ZTContextConstants.noResultsErrorUserInfo)
+                self.state = .failed
+                
+                completion(nil, error)
+            }
+            
+            self.client = nil
         }
+        
+        self.client = client
     }
     
     public func cancel() {

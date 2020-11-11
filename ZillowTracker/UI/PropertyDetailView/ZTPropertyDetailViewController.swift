@@ -55,7 +55,7 @@ class ZTPropertyDetailViewController: UIViewController,
     }
     
     @IBAction func onViewInSafaryButton(_ sender: Any) {
-        if let propertyLink = URL.init(string: house.link) {
+        if let propertyLink = URL(string: house.link) {
             if UIApplication.shared.canOpenURL(propertyLink) {
                 UIApplication.shared.open(propertyLink, options: [ : ], completionHandler: nil)
             }
@@ -149,9 +149,8 @@ class ZTPropertyDetailViewController: UIViewController,
                         rootView.hideLoadingView()
                     }
                 } else {
-                    //display error
                     if let error = error {
-                        print(error.description)
+                        self.showAlert(error: error)
                     }
                 }
             }

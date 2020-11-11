@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_                              application: UIApplication,
                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
+        //MARK:- Configure Firebase
+        FirebaseApp.configure()
         
+        //MARK:- Register Background Task
         let backgroundTaskManager = ZTBackgroundTaskManager()
         backgroundTaskManager.registerBackgroundSearch()
         

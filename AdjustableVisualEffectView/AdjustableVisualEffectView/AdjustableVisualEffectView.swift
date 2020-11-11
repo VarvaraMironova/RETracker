@@ -41,7 +41,7 @@ enum AVStringAlignment: String {
         }
     }
     
-    fileprivate var _effect : UIBlurEffect = UIBlurEffect.init(style: .light)
+    fileprivate var _effect : UIBlurEffect = UIBlurEffect(style: .light)
     public var effect       : UIBlurEffect {
         set {
             if newValue != _effect {
