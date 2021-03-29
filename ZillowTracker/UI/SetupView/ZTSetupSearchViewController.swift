@@ -10,7 +10,7 @@ import UIKit
 import ZTModels
 
 extension UIViewController {
-    func showAlert(error: NSError) {
+    func showAlert(error: NSError, completion block: (() -> Void)? = nil) {
         DispatchQueue.main.async {[unowned self] in
             let continueAction = UIAlertAction(title   : "Continue",
                                                style   : .cancel,
@@ -24,7 +24,7 @@ extension UIViewController {
             
             self.present(alertcontroller,
                          animated   : true,
-                         completion : nil)
+                         completion : block)
         }
     }
 }
@@ -92,22 +92,30 @@ class ZTSetupSearchViewController: UIViewController, UIPickerViewDelegate {
     }
     
     @IBAction func onAPITypeSegmentSegmentControl(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            //"For Sale API" is choosen
-            searchSettings.apiType = .forSale
-            break
-        case 1:
-            //"For Rent API" is choosen
-            searchSettings.apiType = .forRent
-            break
-        default:
-            break
+        #warning("Block segment control till resolve .forRent's API issue.")
+        let error = NSError(domain   : "custom",
+                            code     : ZTUIConstants.cancelErrorCode,
+                            userInfo : ZTUIConstants.blockForRentAPIUserInfo)
+        showAlert(error: error) {
+            sender.selectedSegmentIndex = 0
         }
         
-        if let rootView = rootView {
-            rootView.updatePriceSlider(settings: searchSettings)
-        }
+//        switch sender.selectedSegmentIndex {
+//        case 0:
+//            //"For Sale API" is choosen
+//            searchSettings.apiType = .forSale
+//            break
+//        case 1:
+//            //"For Rent API" is choosen
+//            searchSettings.apiType = .forRent
+//            break
+//        default:
+//            break
+//        }
+//
+//        if let rootView = rootView {
+//            rootView.updatePriceSlider(settings: searchSettings)
+//        }
     }
     
     @IBAction func onPropertyTypeSegmentControl(_ sender: UISegmentedControl) {

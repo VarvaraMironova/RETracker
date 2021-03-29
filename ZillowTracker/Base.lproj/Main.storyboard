@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ItO-bg-tob">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ItO-bg-tob">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -55,7 +55,7 @@
                                 </constraints>
                                 <state key="normal" image="searchIcon_light"/>
                                 <connections>
-                                    <action selector="onPerformSearchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yc9-hh-7sV"/>
+                                    <action selector="onPerformSearchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aUd-kf-2ti"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaf-Nq-4iG">
@@ -119,7 +119,7 @@
                                         <color key="tintColor" name="color_textDark"/>
                                         <color key="selectedSegmentTintColor" name="color_accent"/>
                                         <connections>
-                                            <action selector="onAPITypeSegmentSegmentControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="rmR-C4-G7U"/>
+                                            <action selector="onAPITypeSegmentSegmentControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="Zf5-gb-hxy"/>
                                         </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KpE-M7-Hgx">
@@ -466,6 +466,102 @@
             </objects>
             <point key="canvasLocation" x="1352.1739130434785" y="38.839285714285715"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="fKV-8e-ApP">
+            <objects>
+                <viewController storyboardIdentifier="ZTMapViewController" id="xap-je-uPz" customClass="ZTMapViewController" customModule="RE_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tMZ-4i-cT2" customClass="ZTMapView" customModule="RE_Tracker" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9EZ-56-uqQ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" name="color_bg"/>
+                                <connections>
+                                    <outlet property="delegate" destination="xap-je-uPz" id="J5e-cp-CFB"/>
+                                </connections>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8L5-SX-Nnc" customClass="ZTGradientView" customModule="RE_Tracker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="kAd-E9-bzg"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" name="color_headerDark"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" name="color_headerLight"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P10-Vj-GJe" customClass="AdjustableVisualEffectView" customModule="AdjustableVisualEffectView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dme-b1-2wG" customClass="ZTMapInfoView" customModule="RE_Tracker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="786" width="414" height="852"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line_icon_accent" translatesAutoresizingMaskIntoConstraints="NO" id="8B8-c7-BSg">
+                                        <rect key="frame" x="186.5" y="8" width="41" height="4"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="4" id="Ioc-DH-vi5"/>
+                                        </constraints>
+                                    </imageView>
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for zip or city" translatesAutoresizingMaskIntoConstraints="NO" id="RIw-CT-snK">
+                                        <rect key="frame" x="0.0" y="20" width="414" height="56"/>
+                                        <color key="barTintColor" name="color_bg"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" name="color_bg"/>
+                                <constraints>
+                                    <constraint firstItem="RIw-CT-snK" firstAttribute="leading" secondItem="Dme-b1-2wG" secondAttribute="leading" id="5j0-sP-w4b"/>
+                                    <constraint firstItem="8B8-c7-BSg" firstAttribute="top" secondItem="Dme-b1-2wG" secondAttribute="top" constant="8" id="FhH-3C-Wrs"/>
+                                    <constraint firstItem="8B8-c7-BSg" firstAttribute="centerX" secondItem="Dme-b1-2wG" secondAttribute="centerX" id="YEs-qX-uWK"/>
+                                    <constraint firstAttribute="trailing" secondItem="RIw-CT-snK" secondAttribute="trailing" id="gQJ-Pi-08M"/>
+                                    <constraint firstItem="RIw-CT-snK" firstAttribute="top" secondItem="8B8-c7-BSg" secondAttribute="bottom" constant="8" id="iqc-wR-WRG"/>
+                                    <constraint firstItem="8B8-c7-BSg" firstAttribute="width" secondItem="Dme-b1-2wG" secondAttribute="width" multiplier="44:444" id="u5w-FG-28T"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="searchBar" destination="RIw-CT-snK" id="Fjr-yC-TRb"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lfH-Fd-pnM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9EZ-56-uqQ" firstAttribute="leading" secondItem="lfH-Fd-pnM" secondAttribute="leading" id="0yB-I4-Fr9"/>
+                            <constraint firstItem="9EZ-56-uqQ" firstAttribute="top" secondItem="tMZ-4i-cT2" secondAttribute="top" id="G49-Yy-H1F"/>
+                            <constraint firstItem="8L5-SX-Nnc" firstAttribute="top" secondItem="tMZ-4i-cT2" secondAttribute="top" id="HSq-QH-N70"/>
+                            <constraint firstAttribute="trailing" secondItem="8L5-SX-Nnc" secondAttribute="trailing" id="OUw-Tf-P09"/>
+                            <constraint firstAttribute="bottom" secondItem="P10-Vj-GJe" secondAttribute="bottom" id="RHg-j1-Qdj"/>
+                            <constraint firstAttribute="bottom" secondItem="9EZ-56-uqQ" secondAttribute="bottom" id="RIA-Rd-Ca9"/>
+                            <constraint firstItem="Dme-b1-2wG" firstAttribute="top" secondItem="tMZ-4i-cT2" secondAttribute="bottom" constant="-110" id="S4y-RS-jI8"/>
+                            <constraint firstItem="Dme-b1-2wG" firstAttribute="leading" secondItem="lfH-Fd-pnM" secondAttribute="leading" id="Uvl-Rf-lut"/>
+                            <constraint firstItem="Dme-b1-2wG" firstAttribute="trailing" secondItem="lfH-Fd-pnM" secondAttribute="trailing" id="au9-bD-JVc"/>
+                            <constraint firstItem="P10-Vj-GJe" firstAttribute="leading" secondItem="lfH-Fd-pnM" secondAttribute="leading" id="bod-od-wJR"/>
+                            <constraint firstItem="P10-Vj-GJe" firstAttribute="trailing" secondItem="lfH-Fd-pnM" secondAttribute="trailing" id="c9T-yo-ZFW"/>
+                            <constraint firstItem="8L5-SX-Nnc" firstAttribute="leading" secondItem="tMZ-4i-cT2" secondAttribute="leading" id="chp-ej-PWi"/>
+                            <constraint firstItem="9EZ-56-uqQ" firstAttribute="trailing" secondItem="lfH-Fd-pnM" secondAttribute="trailing" id="sWQ-4T-WeP"/>
+                            <constraint firstItem="Dme-b1-2wG" firstAttribute="height" secondItem="tMZ-4i-cT2" secondAttribute="height" constant="-44" id="vNc-75-QA6"/>
+                            <constraint firstItem="P10-Vj-GJe" firstAttribute="top" secondItem="tMZ-4i-cT2" secondAttribute="top" id="wT4-uL-aUR"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="blurBackgroundView" destination="P10-Vj-GJe" id="5rS-kS-Ume"/>
+                            <outlet property="mapInfoView" destination="Dme-b1-2wG" id="URt-na-G2L"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="8HD-ug-0V2"/>
+                    <connections>
+                        <outlet property="mapView" destination="9EZ-56-uqQ" id="BxB-qv-f8l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nm1-W0-dvc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-226.08695652173915" y="747.99107142857144"/>
+        </scene>
         <!--Property Detail View Controller-->
         <scene sceneID="7L2-dc-sCx">
             <objects>
@@ -771,6 +867,7 @@
                             <outlet property="yearBuitFeatureView" destination="muY-Ps-rnY" id="Whz-yb-VkW"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="fXt-dZ-cwA"/>
                     <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M7y-g5-s3K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -786,7 +883,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2hI-O5-SEU"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="M5n-KL-chM"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TGh-0x-wiO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -795,6 +892,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="line_icon_accent" width="2150" height="200"/>
         <image name="searchIcon_light" width="494" height="484"/>
         <namedColor name="color_accent">
             <color red="0.70588235294117652" green="0.36470588235294116" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -816,6 +914,9 @@
         </namedColor>
         <systemColor name="separatorColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

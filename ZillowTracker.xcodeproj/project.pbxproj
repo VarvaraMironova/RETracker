@@ -42,6 +42,7 @@
 		D77CA4A024C4E7B1004554E1 /* AdjustableVisualEffectView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77CA49B24C4E796004554E1 /* AdjustableVisualEffectView.framework */; };
 		D77CA4A124C4E7B1004554E1 /* AdjustableVisualEffectView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D77CA49B24C4E796004554E1 /* AdjustableVisualEffectView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D77CA4A624C64F30004554E1 /* ZTBackgroundTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77CA4A524C64F30004554E1 /* ZTBackgroundTaskManager.swift */; };
+		D780D2EE25631207006C2FC4 /* ZTAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D780D2ED25631207006C2FC4 /* ZTAnnotationView.xib */; };
 		D78137B82492EA58001FEDDE /* ZTSetupSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137B72492EA58001FEDDE /* ZTSetupSearchView.swift */; };
 		D78137BA24930768001FEDDE /* ZTPickerViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137B924930768001FEDDE /* ZTPickerViewDataSource.swift */; };
 		D78137BC24931717001FEDDE /* ZTStringSeparatorExtansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137BB24931717001FEDDE /* ZTStringSeparatorExtansion.swift */; };
@@ -50,6 +51,9 @@
 		D78137C5249457CA001FEDDE /* ZTPropertyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137C4249457CA001FEDDE /* ZTPropertyTableViewCell.swift */; };
 		D78137C92495C1D4001FEDDE /* ZTTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78137C82495C1D4001FEDDE /* ZTTableViewDataSource.swift */; };
 		D78379F6254C6CDA007812C8 /* ZTGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78379F5254C6CDA007812C8 /* ZTGradientView.swift */; };
+		D793B833255EE7AD006C8ED4 /* ZTMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793B832255EE7AD006C8ED4 /* ZTMapViewController.swift */; };
+		D793B839255EEE2A006C8ED4 /* ZTMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793B838255EEE2A006C8ED4 /* ZTMapView.swift */; };
+		D793B83F255EFABC006C8ED4 /* ZTMapInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793B83E255EFABC006C8ED4 /* ZTMapInfoView.swift */; };
 		D79A377624803403005899BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A377524803403005899BF /* AppDelegate.swift */; };
 		D79A377824803403005899BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A377724803403005899BF /* SceneDelegate.swift */; };
 		D79A377A24803403005899BF /* ZTSetupSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A377924803403005899BF /* ZTSetupSearchViewController.swift */; };
@@ -61,6 +65,8 @@
 		D7C34C08253E018900DF18D4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D7C34C07253E018900DF18D4 /* README.md */; };
 		D7C34C372542584B00DF18D4 /* ZTLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C34C362542584B00DF18D4 /* ZTLoadingView.swift */; };
 		D7C5D7922551C1AB0039BFA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D79A377E24803407005899BF /* Assets.xcassets */; };
+		D7C95942255F697400FEA0CC /* ZTAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C95941255F697400FEA0CC /* ZTAnnotationView.swift */; };
+		D7C95947255F6F5400FEA0CC /* ZTAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C95946255F6F5400FEA0CC /* ZTAnnotation.swift */; };
 		D7E97ED42547275C00381F33 /* VMPagingFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E97ED32547275C00381F33 /* VMPagingFlowLayout.swift */; };
 		D7E97ED8254883DF00381F33 /* ZTPropertyFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E97ED7254883DF00381F33 /* ZTPropertyFeatureView.swift */; };
 		D7E97EE22548891600381F33 /* ZTPropertyFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E97EE12548891600381F33 /* ZTPropertyFeatureView.xib */; };
@@ -197,6 +203,7 @@
 		D77CA46924C37D31004554E1 /* ZTContextConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTContextConstants.swift; sourceTree = "<group>"; };
 		D77CA49524C4E796004554E1 /* AdjustableVisualEffectView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AdjustableVisualEffectView.xcodeproj; path = AdjustableVisualEffectView/AdjustableVisualEffectView.xcodeproj; sourceTree = "<group>"; };
 		D77CA4A524C64F30004554E1 /* ZTBackgroundTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTBackgroundTaskManager.swift; sourceTree = "<group>"; };
+		D780D2ED25631207006C2FC4 /* ZTAnnotationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZTAnnotationView.xib; sourceTree = "<group>"; };
 		D78137B72492EA58001FEDDE /* ZTSetupSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTSetupSearchView.swift; sourceTree = "<group>"; };
 		D78137B924930768001FEDDE /* ZTPickerViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTPickerViewDataSource.swift; sourceTree = "<group>"; };
 		D78137BB24931717001FEDDE /* ZTStringSeparatorExtansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTStringSeparatorExtansion.swift; sourceTree = "<group>"; };
@@ -205,6 +212,9 @@
 		D78137C4249457CA001FEDDE /* ZTPropertyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTPropertyTableViewCell.swift; sourceTree = "<group>"; };
 		D78137C82495C1D4001FEDDE /* ZTTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTTableViewDataSource.swift; sourceTree = "<group>"; };
 		D78379F5254C6CDA007812C8 /* ZTGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTGradientView.swift; sourceTree = "<group>"; };
+		D793B832255EE7AD006C8ED4 /* ZTMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTMapViewController.swift; sourceTree = "<group>"; };
+		D793B838255EEE2A006C8ED4 /* ZTMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTMapView.swift; sourceTree = "<group>"; };
+		D793B83E255EFABC006C8ED4 /* ZTMapInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTMapInfoView.swift; sourceTree = "<group>"; };
 		D79A377224803403005899BF /* RE Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RE Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D79A377524803403005899BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D79A377724803403005899BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -219,6 +229,8 @@
 		D7C34BFB253DFE5200DF18D4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D7C34C07253E018900DF18D4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D7C34C362542584B00DF18D4 /* ZTLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTLoadingView.swift; sourceTree = "<group>"; };
+		D7C95941255F697400FEA0CC /* ZTAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTAnnotationView.swift; sourceTree = "<group>"; };
+		D7C95946255F6F5400FEA0CC /* ZTAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTAnnotation.swift; sourceTree = "<group>"; };
 		D7E97ED32547275C00381F33 /* VMPagingFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMPagingFlowLayout.swift; sourceTree = "<group>"; };
 		D7E97ED7254883DF00381F33 /* ZTPropertyFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTPropertyFeatureView.swift; sourceTree = "<group>"; };
 		D7E97EE12548891600381F33 /* ZTPropertyFeatureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZTPropertyFeatureView.xib; sourceTree = "<group>"; };
@@ -403,6 +415,19 @@
 			path = GradientHeaderView;
 			sourceTree = "<group>";
 		};
+		D793B82B255EE76F006C8ED4 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				D793B832255EE7AD006C8ED4 /* ZTMapViewController.swift */,
+				D793B838255EEE2A006C8ED4 /* ZTMapView.swift */,
+				D793B83E255EFABC006C8ED4 /* ZTMapInfoView.swift */,
+				D7C95941255F697400FEA0CC /* ZTAnnotationView.swift */,
+				D780D2ED25631207006C2FC4 /* ZTAnnotationView.xib */,
+				D7C95946255F6F5400FEA0CC /* ZTAnnotation.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
 		D79A376924803403005899BF = {
 			isa = PBXGroup;
 			children = (
@@ -458,6 +483,7 @@
 				D78379F0254C6CBB007812C8 /* GradientHeaderView */,
 				D7E97ED22547275C00381F33 /* CollectionViewFlowLayout */,
 				D7C34C312542581B00DF18D4 /* LoadingView */,
+				D793B82B255EE76F006C8ED4 /* MapView */,
 				D78137C6249457D6001FEDDE /* SetupView */,
 				D78137C7249457F7001FEDDE /* PropertyListView */,
 				D74ADE3C24CA59C000C127A3 /* PropertyDetailView */,
@@ -711,6 +737,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D75D77B5249AE3E200EBB090 /* ZTPropertyListHeaderView.xib in Resources */,
+				D780D2EE25631207006C2FC4 /* ZTAnnotationView.xib in Resources */,
 				D79A378224803407005899BF /* LaunchScreen.storyboard in Resources */,
 				D75139CF24BCF5BA00CF35BE /* DoorBell.wav in Resources */,
 				D75139CD24BCED2B00CF35BE /* Knocking.mp3 in Resources */,
@@ -829,7 +856,6 @@
 			);
 			inputPaths = (
 				"",
-				"$(SRCROOT)/${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${ZillowTracker}",
 			);
 			outputFileListPaths = (
 			);
@@ -896,15 +922,20 @@
 				D78137BC24931717001FEDDE /* ZTStringSeparatorExtansion.swift in Sources */,
 				D74AAB8624B5520B00996F1A /* ZTDateExtension.swift in Sources */,
 				D74ADE4224CA59EC00C127A3 /* ZTPropertyDetailViewController.swift in Sources */,
+				D7C95942255F697400FEA0CC /* ZTAnnotationView.swift in Sources */,
 				D74ADE4824CB456C00C127A3 /* ZTCollectionViewDataSource.swift in Sources */,
 				D77CA45D24C279D4004554E1 /* ZTSearchPropertiesContext.swift in Sources */,
 				D78379F6254C6CDA007812C8 /* ZTGradientView.swift in Sources */,
+				D793B83F255EFABC006C8ED4 /* ZTMapInfoView.swift in Sources */,
+				D793B833255EE7AD006C8ED4 /* ZTMapViewController.swift in Sources */,
+				D7C95947255F6F5400FEA0CC /* ZTAnnotation.swift in Sources */,
 				D75D77B3249AE33500EBB090 /* ZTPropertyListHeaderView.swift in Sources */,
 				D79A377624803403005899BF /* AppDelegate.swift in Sources */,
 				D78137C5249457CA001FEDDE /* ZTPropertyTableViewCell.swift in Sources */,
 				D79A377824803403005899BF /* SceneDelegate.swift in Sources */,
 				D78137B82492EA58001FEDDE /* ZTSetupSearchView.swift in Sources */,
 				D77CA4A624C64F30004554E1 /* ZTBackgroundTaskManager.swift in Sources */,
+				D793B839255EEE2A006C8ED4 /* ZTMapView.swift in Sources */,
 				D74ADE4424CA5A0700C127A3 /* ZTPropertyDetailView.swift in Sources */,
 				D77CA42D24C24D8F004554E1 /* ZTUIConstants.swift in Sources */,
 			);

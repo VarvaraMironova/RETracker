@@ -21,4 +21,7 @@ enum ZTUIConstants {
     
     //collectionView constants
     static let minInterItemSpacingPhoto : CGFloat = 4.0
+    
+    static let blockForRentAPIUserInfo = [errorTitleKey   : "For Rent API error.",
+                                          errorMessageKey : "The API is currently unavailable."]
 }

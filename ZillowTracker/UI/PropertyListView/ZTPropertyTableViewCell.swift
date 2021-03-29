@@ -72,10 +72,11 @@ class ZTPropertyTableViewCell: UITableViewCell {
         }
     }
     
+    //MARK:- Private
     private func addRankView(rank: String) {
-        let imageFrame = propertyImageView.frame
-        let frame = CGRect(x     : imageFrame.origin.x,
-                           y     : imageFrame.origin.y,
+        let imageOrigin = propertyImageView.frame.origin
+        let frame = CGRect(x     : imageOrigin.x,
+                           y     : imageOrigin.y,
                            width : 48,
                            height: 48)
         let rankView = AdjustableVisualEffectView(frame: frame)
@@ -87,7 +88,6 @@ class ZTPropertyTableViewCell: UITableViewCell {
         blurView = rankView
     }
     
-    //MARK:- Private
     private func showLoadingView() {
         //show loadingView in imagePreviewCollectionView's cell frame
         let frame = propertyImageView.bounds
